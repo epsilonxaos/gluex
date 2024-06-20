@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+	@apply h-svh bg-repeat bg-center font-auxMono text-grisClaro;
+	background-image: url(/src/assets/img/noise.jpg);
+}
+
+.bubblesAnimationNoise {
+	@apply size-full bg-repeat bg-center opacity-60 absolute z-[1] top-0 left-0;
+	background-image: url(/src/assets/img/noise.jpg);
+}
