@@ -4,11 +4,17 @@
 
 body,
 html {
-	@apply h-svh bg-repeat bg-center font-auxMono text-grisClaro;
-	background-image: url(/src/assets/img/noise.jpg);
+	@apply min-h-svh font-aeonik text-grisClaro bg-black;
 }
 
 .bubblesAnimationNoise {
-	@apply size-full bg-repeat bg-center opacity-60 absolute z-[1] top-0 left-0;
-	background-image: url(/src/assets/img/noise.jpg);
+	@apply size-full bg-repeat bg-center opacity-30 absolute z-[1] top-0 left-0;
+	background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), url(/src/assets/img/noise.svg);
+}
+
+.swiper-slide {
+	opacity: 0 !important;
+}
+.swiper-slide.swiper-slide-visible {
+	opacity: 1 !important;
 }

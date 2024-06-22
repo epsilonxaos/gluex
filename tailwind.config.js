@@ -12,6 +12,9 @@ export default {
 				auxMono: ["Aux Mono", "sans-serif"],
 				aeonik: ["Aeonik", "sans-serif"],
 			},
+			maxWidth: {
+				app: "1320px",
+			},
 		},
 	},
 	plugins: [],

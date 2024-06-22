@@ -14,7 +14,7 @@ export const BubblesAnimation = ({ className = "", children }) => {
 	return (
 		<section ref={ref} className={twMerge("overflow-hidden h-screen relative", className)}>
 			<div className="bubblesAnimationNoise" />
-			<div className="relative z-[2]">{children}</div>
+			{children}
 			<div className="gradient-bg">
 				<svg xmlns="http://www.w3.org/2000/svg">
 					<defs>
