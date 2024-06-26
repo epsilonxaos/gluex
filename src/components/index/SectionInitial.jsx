@@ -6,7 +6,7 @@ const words = ["all-round", "flexible", "unique"];
 
 export const SectionInitial = () => {
 	return (
-		<div className="md:flex md:flex-col md:flex-wrap md:items-end md:justify-end max-md:min-h-svh max-md:pt-[140px] md:pb-[15vh] w-full h-full">
+		<div className="md:flex md:flex-col relative md:flex-wrap md:items-end md:justify-end max-md:min-h-svh max-md:pt-[140px] md:pb-[15vh] w-full h-full">
 			{/* //* Solo movil */}
 			<h1 className="md:hidden text-[48px] w-full text-center max-w-[305px] mx-auto mb-[50px]">
 				Earn with{" "}
@@ -56,6 +56,10 @@ export const SectionInitial = () => {
 						</p>
 					</li>
 				</ul>
+			</div>
+
+			<div className="absolute bottom-[8vh] left-1/2 -translate-x-1/2 md:block hidden">
+				<div className="scroll-down2"></div>
 			</div>
 		</div>
 	);

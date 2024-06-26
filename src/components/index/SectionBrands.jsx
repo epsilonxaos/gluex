@@ -3,7 +3,7 @@ import { Si7Zip, SiAirbnb, SiAmazongames, SiAmd, SiApple, SiCocacola, SiCoolerma
 
 export const SectionBrands = () => {
 	return (
-		<div className="flex flex-col flex-wrap items-end justify-end pb-[8%] w-full h-full px-10 max-w-app mx-auto bg-black-noise md:bg-none">
+		<div className="flex flex-col flex-wrap items-end justify-end pb-[140px] md:pb-[14vh] w-full h-full px-10 max-w-app mx-auto bg-black-noise md:bg-none">
 			<h3 className="text-[32px] w-full text-center mb-4">
 				Gluing <span className="text-salmon">DeFi</span>
 			</h3>
