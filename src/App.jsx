@@ -10,7 +10,7 @@ function App() {
 
 			<main>
 				<BubblesAnimation className="fixed top-0 left-0 h-svh w-full">
-					<h1 className="text-[96px] absolute z-[1] top-[40%] -translate-y-1/2 w-full flex items-center justify-center">
+					<h1 className="hidden md:flex text-[96px] absolute z-[1] top-[40%] -translate-y-1/2 w-full items-center justify-center">
 						Earn with Glue
 						<svg className="w-[80px] inline ml-2" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 89.1 88.1" xmlSpace="preserve">
 							<g>
@@ -22,6 +22,7 @@ function App() {
 						</svg>
 					</h1>
 				</BubblesAnimation>
+
 				<Home />
 			</main>
 

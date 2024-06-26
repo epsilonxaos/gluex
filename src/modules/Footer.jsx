@@ -6,52 +6,87 @@ const iconSize = 14;
 
 export const Footer = () => {
 	return (
-		<footer className="px-10 fixed bottom-0 left-0 w-full z-50">
-			<div className="max-w-app mx-auto">
+		<footer className="px-7 lg:px-10 relative md:fixed md:bottom-0 md:left-0 w-full z-50 bg-black-noise md:bg-none">
+			<div className="max-w-app mx-auto font-auxMono text-[10px] leading-[11px]">
 				<hr className="border-t border-verde" />
 
-				<nav className="grid grid-cols-2 py-4 font-auxMono text-[10px] leading-[11px]">
+				<nav className="md:grid-cols-2 py-4 hidden md:grid">
 					<div className="col-span-1 flex items-center justify-start">
-						<ul className="grid grid-cols-3 max-w-max gap-2 mr-6">
-							<li className="col-span-1">
-								<Links>
-									<FaLinkedin size={iconSize} />
-								</Links>
-							</li>
-							<li className="col-span-1">
-								<Links>
-									<FaXTwitter size={iconSize} />
-								</Links>
-							</li>
-							<li className="col-span-1">
-								<Links>
-									<FaDiscord size={iconSize} />
-								</Links>
-							</li>
-						</ul>
+						<SocialMedia />
 
-						<ul className="flex items-center gap-8 max-w-max">
-							<li className="col-span-1">
-								<Links className={"flex items-center"}>
-									<FaTelegram size={iconSize} className="inline-block mr-2" /> 000 000 0000
-								</Links>
-							</li>
-							<li className="col-span-1">
-								<Links.Mail>Mail</Links.Mail>
-							</li>
-							<li className="col-span-1">
-								<Links>Integrate</Links>
-							</li>
-							<li className="col-span-1">
-								<Links>Blog</Links>
-							</li>
-						</ul>
+						<NavFooter />
 					</div>
 					<div className="col-span-1 text-right">
-						Copy Right® | <Links>Developed by MadebyPartners</Links>
+						<CopyRight />
 					</div>
+				</nav>
+
+				<nav className="py-10 md:hidden">
+					<div className="flex items-center justify-center gap-6 mb-7">
+						<SocialMedia />
+						<Links className={"flex items-center"}>
+							<FaTelegram size={iconSize} className="inline-block mr-2" /> 000 000 0000
+						</Links>
+					</div>
+
+					<NavFooter />
+
+					<p className="mt-7 text-center">
+						<CopyRight />
+					</p>
 				</nav>
 			</div>
 		</footer>
+	);
+};
+
+const SocialMedia = () => {
+	return (
+		<ul className="grid grid-cols-3 max-w-max gap-2 md:mr-3 lg:mr-6">
+			<li className="col-span-1">
+				<Links>
+					<FaLinkedin size={iconSize} />
+				</Links>
+			</li>
+			<li className="col-span-1">
+				<Links>
+					<FaXTwitter size={iconSize} />
+				</Links>
+			</li>
+			<li className="col-span-1">
+				<Links>
+					<FaDiscord size={iconSize} />
+				</Links>
+			</li>
+		</ul>
+	);
+};
+
+const NavFooter = () => {
+	return (
+		<ul className="flex items-center gap-8 md:gap-5 lg:gap-8 max-w-max max-md:mx-auto">
+			<li className="hidden md:block">
+				<Links className={"flex items-center"}>
+					<FaTelegram size={iconSize} className="inline-block mr-2" /> 000 000 0000
+				</Links>
+			</li>
+			<li className="">
+				<Links.Mail>Mail</Links.Mail>
+			</li>
+			<li className="">
+				<Links>Integrate</Links>
+			</li>
+			<li className="">
+				<Links>Blog</Links>
+			</li>
+		</ul>
+	);
+};
+
+const CopyRight = () => {
+	return (
+		<>
+			Copy Right® | <Links>Developed by MadebyPartners</Links>
+		</>
 	);
 };
