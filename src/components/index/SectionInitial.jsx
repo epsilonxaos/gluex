@@ -23,7 +23,7 @@ export const SectionInitial = () => {
 				</span>
 			</h1>
 
-			<img src={animate} alt="Animacion" className="w-[238px] object-cover h-[260px] mx-auto md:hidden mb-[80px]" />
+			<img src={animate} alt="Animacion" className="w-[238px] object-cover h-[260px] mx-auto md:hidden mb-[60px]" />
 
 			<p className="text-[28px] md:text-[32px] w-full text-center mb-[0px] md:mb-[8vh] px-[45px]">
 				<span className="block lg:inline">
@@ -34,19 +34,25 @@ export const SectionInitial = () => {
 
 			<div className="bg-gradient h-[70px] md:hidden"></div>
 			<div className="bg-black-noise md:bg-none pb-[80px] md:pb-0 w-full">
-				<ul className="text-center md:flex md:items-center md:justify-between max-w-[960px] w-[95%] mx-auto font-auxMono">
-					<li className="mb-[40px] md:mb-0">
+				<ul className="bg-texture md:bg-none py-14 md:py-0 rounded-2xl max-w-max px-12 text-center md:flex md:items-center md:justify-between md:max-w-[960px] w-[95%] mx-auto font-auxMono">
+					<li className="mb-[0px] md:mb-0">
 						<p className="text-xs lg:text-sm">TOTAL VALUE FLOW</p>
 						<p className="text-[18px] lg:text-[23px]">
 							+$
 							<AnimatedNumber value={32000000000} />
 						</p>
 					</li>
-					<li className="mb-[40px] md:mb-0">
+					<li className="py-4 md:hidden">
+						<div className="h-[40px] w-[1px] bg-white mx-auto" />
+					</li>
+					<li className="mb-[0px] md:mb-0">
 						<p className="text-xs lg:text-sm">TOTAL INTENTS SETTLED</p>
 						<p className="text-[18px] lg:text-[23px]">
 							+<AnimatedNumber value={300000} />
 						</p>
+					</li>
+					<li className="py-4 md:hidden">
+						<div className="h-[40px] w-[1px] bg-white mx-auto" />
 					</li>
 					<li className="">
 						<p className="text-xs lg:text-sm">TOTAL VALUE SOLVED</p>
