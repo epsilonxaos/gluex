@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import logo from "../assets/img/logo.svg";
 import Links from "../components/Links";
 import { AnimatePresence, motion } from "framer-motion";
+import { IoCloseOutline } from "react-icons/io5";
+import AppContext from "../context/AppContext";
 
 const containerVariants = {
 	hidden: { opacity: 0 },
@@ -20,6 +22,7 @@ const variantEscritorio = {
 
 export const Header = () => {
 	const [open, setOpen] = useState(false);
+	const { dispatch } = useContext(AppContext);
 
 	const handleToggle = () => setOpen(!open);
 
@@ -39,7 +42,9 @@ export const Header = () => {
 											<Links>Blog</Links>
 										</motion.li>
 										<motion.li variants={variantEscritorio} transition={{ duration: 0.3 }}>
-											<Links>Integrate</Links>
+											<button className="text-white hover:text-verde" type="button" onClick={() => dispatch({ openModalContact: true })}>
+												Integrate
+											</button>
 										</motion.li>
 									</motion.ul>
 
@@ -48,21 +53,28 @@ export const Header = () => {
 											<Links>Blog</Links>
 										</motion.li>
 										<motion.li variants={variantEscritorio} transition={{ duration: 0.3 }}>
-											<Links>Integrate</Links>
+											<button className="text-white hover:text-verde" type="button" onClick={() => dispatch({ openModalContact: true })}>
+												Integrate
+											</button>
 										</motion.li>
 									</motion.ul>
 								</nav>
 							)}
 						</AnimatePresence>
 
-						<button type="button" onClick={handleToggle}>
-							<svg className="w-[18px] inline-block cursor-pointer" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 89.1 68.8" xmlSpace="preserve">
-								<g>
-									<path fill="white" d="M3.8,68.8h81.4c2.1,0,3.8-1.7,3.8-3.8v-3.3c0-2.1-1.7-3.8-3.8-3.8H3.8c-2.1,0-3.8,1.7-3.8,3.8L0,65 C0,67.1,1.7,68.8,3.8,68.8z" />
-									<path fill="white" d="M25,39.9h60.2c2.1,0,3.8-1.7,3.8-3.8v-3.3c0-2.1-1.7-3.8-3.8-3.8H25c-2.1,0-3.8,1.7-3.8,3.8V36 C21.2,38.2,22.9,39.9,25,39.9z" />
-									<path fill="white" d="M3.8,11h81.4c2.1,0,3.8-1.7,3.8-3.8V3.8c0-2.1-1.7-3.8-3.8-3.8L3.8,0C1.7,0,0,1.7,0,3.8l0,3.3 C0,9.3,1.7,11,3.8,11z" />
-								</g>
-							</svg>
+						<button type="button" className="h-[30px] flex items-center justify-center" onClick={handleToggle}>
+							{!open ? (
+								<svg className="w-[18px] inline-block cursor-pointer" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 89.1 68.8" xmlSpace="preserve">
+									<g>
+										<path fill="white" d="M3.8,68.8h81.4c2.1,0,3.8-1.7,3.8-3.8v-3.3c0-2.1-1.7-3.8-3.8-3.8H3.8c-2.1,0-3.8,1.7-3.8,3.8L0,65 C0,67.1,1.7,68.8,3.8,68.8z" />
+										<path fill="white" d="M25,39.9h60.2c2.1,0,3.8-1.7,3.8-3.8v-3.3c0-2.1-1.7-3.8-3.8-3.8H25c-2.1,0-3.8,1.7-3.8,3.8V36 C21.2,38.2,22.9,39.9,25,39.9z" />
+										<path fill="white" d="M3.8,11h81.4c2.1,0,3.8-1.7,3.8-3.8V3.8c0-2.1-1.7-3.8-3.8-3.8L3.8,0C1.7,0,0,1.7,0,3.8l0,3.3 C0,9.3,1.7,11,3.8,11z" />
+									</g>
+								</svg>
+							) : (
+								<IoCloseOutline size={30} className="relative -right-1.5" />
+							)}
+							{/* <IoCloseOutline size={32} /> */}
 						</button>
 					</div>
 				</nav>

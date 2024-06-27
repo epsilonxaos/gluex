@@ -1,6 +1,8 @@
 import { FaLinkedin, FaTelegram } from "react-icons/fa";
 import { FaXTwitter, FaDiscord } from "react-icons/fa6";
 import Links from "../components/Links";
+import { useContext } from "react";
+import AppContext from "../context/AppContext";
 
 const iconSize = 14;
 
@@ -53,16 +55,18 @@ const SocialMedia = () => {
 					<FaXTwitter size={iconSize} />
 				</Links>
 			</li>
-			<li className="col-span-1">
+			{/* <li className="col-span-1">
 				<Links>
 					<FaDiscord size={iconSize} />
 				</Links>
-			</li>
+			</li> */}
 		</ul>
 	);
 };
 
 const NavFooter = () => {
+	const { dispatch } = useContext(AppContext);
+
 	return (
 		<ul className="flex items-center gap-8 md:gap-5 lg:gap-8 max-w-max max-md:mx-auto">
 			<li className="hidden md:block">
@@ -74,7 +78,9 @@ const NavFooter = () => {
 				<Links.Mail mail={"conttact@gluex.xyz"}>Mail</Links.Mail>
 			</li>
 			<li className="">
-				<Links>Integrate</Links>
+				<button type="button" onClick={() => dispatch({ openModalContact: true })}>
+					Integrate
+				</button>
 			</li>
 			<li className="">
 				<Links url={"http://blog.gluex.xyz/"}>Blog</Links>

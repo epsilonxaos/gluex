@@ -1,12 +1,26 @@
+import { Toaster } from "sonner";
 import { BubblesAnimation } from "./components/BubblesAnimation";
+import { ModalContacto } from "./components/ModalContacto";
 import { Footer } from "./modules/Footer";
 import { Header } from "./modules/Header";
 import { Home } from "./pages/Home";
+import AppContext from "./context/AppContext";
+import { useReducer } from "react";
+
+const initialArgs = {
+	openModalContact: false,
+};
+const reducer = (prev, next) => ({ ...prev, ...next });
 
 function App() {
+	const [state, dispatch] = useReducer(reducer, initialArgs);
+
 	return (
-		<>
+		<AppContext.Provider value={{ state, dispatch }}>
 			<Header />
+			<Toaster />
+
+			<ModalContacto />
 
 			<main>
 				<BubblesAnimation className="fixed top-0 left-0 h-svh w-full">
@@ -27,7 +41,7 @@ function App() {
 			</main>
 
 			<Footer />
-		</>
+		</AppContext.Provider>
 	);
 }
 
