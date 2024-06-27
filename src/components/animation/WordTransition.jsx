@@ -36,7 +36,7 @@ export const WordTransition = ({ words = [] }) => {
 	return <motion.span className="text-verde">{displayedText}</motion.span>;
 };
 
-// const WordTransition2 = () => {
+// export const WordTransition = ({ words }) => {
 // 	const [index, setIndex] = useState(0);
 
 // 	useEffect(() => {
