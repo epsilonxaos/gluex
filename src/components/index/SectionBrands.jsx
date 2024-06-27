@@ -1,5 +1,4 @@
 import { InfiniteMovingCards } from "../animation/infinite-moving-cards";
-import { Si7Zip, SiAirbnb, SiAmazongames, SiAmd, SiApple, SiCocacola, SiCoolermaster, SiCorsair, SiDeno, SiDiscord, SiGithub, SiGreensock, SiHuawei, SiIntel, SiLaravel, SiLess, SiMsibusiness, SiNasa, SiNintendoswitch, SiSteamdeck } from "react-icons/si";
 
 export const SectionBrands = () => {
 	return (
