@@ -44,12 +44,12 @@ const SocialMedia = () => {
 	return (
 		<ul className="grid grid-cols-3 max-w-max gap-2 md:mr-3 lg:mr-6">
 			<li className="col-span-1">
-				<Links>
+				<Links url={"https://www.linkedin.com/company/gluex-protocol/"}>
 					<FaLinkedin size={iconSize} />
 				</Links>
 			</li>
 			<li className="col-span-1">
-				<Links>
+				<Links url={"https://x.com/GluexProtocol"}>
 					<FaXTwitter size={iconSize} />
 				</Links>
 			</li>
@@ -66,18 +66,18 @@ const NavFooter = () => {
 	return (
 		<ul className="flex items-center gap-8 md:gap-5 lg:gap-8 max-w-max max-md:mx-auto">
 			<li className="hidden md:block">
-				<Links className={"flex items-center"}>
+				<Links className={"flex items-center"} url={"https://t.me/+yf_US2ACNrgyNzY0"}>
 					<FaTelegram size={iconSize} className="inline-block mr-2" /> 000 000 0000
 				</Links>
 			</li>
 			<li className="">
-				<Links.Mail>Mail</Links.Mail>
+				<Links.Mail mail={"conttact@gluex.xyz"}>Mail</Links.Mail>
 			</li>
 			<li className="">
 				<Links>Integrate</Links>
 			</li>
 			<li className="">
-				<Links>Blog</Links>
+				<Links url={"http://blog.gluex.xyz/"}>Blog</Links>
 			</li>
 		</ul>
 	);
@@ -86,7 +86,7 @@ const NavFooter = () => {
 const CopyRight = () => {
 	return (
 		<>
-			Copy Right® | <Links>Developed by MadebyPartners</Links>
+			Copy Right® | <Links url={"https://madeby.partners/"}>Developed by MadebyPartners</Links>
 		</>
 	);
 };
