@@ -1,6 +1,6 @@
 import AnimatedNumber from "../animation/AnimatedNumber";
 import { WordTransition } from "../animation/WordTransition";
-import animate from "../../assets/img/animate.svg";
+import animate from "../../assets/img/animate.gif";
 
 const words = ["flexible", "powerful", "all-round"];
 
@@ -23,7 +23,7 @@ export const SectionInitial = () => {
 				</span>
 			</h1>
 
-			<img src={animate} alt="Animacion" className="w-[238px] object-cover h-[260px] mx-auto md:hidden" />
+			<img src={animate} alt="Animacion" className="w-[238px] object-cover h-[260px] mx-auto md:hidden mb-[80px]" />
 
 			<p className="text-[28px] md:text-[32px] w-full text-center mb-[0px] md:mb-[8vh] px-[45px]">
 				<span className="block lg:inline">
