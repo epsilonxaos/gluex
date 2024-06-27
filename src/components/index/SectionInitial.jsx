@@ -2,7 +2,7 @@ import AnimatedNumber from "../animation/AnimatedNumber";
 import { WordTransition } from "../animation/WordTransition";
 import animate from "../../assets/img/animate.svg";
 
-const words = ["all-round", "flexible", "unique"];
+const words = ["flexible", "powerful", "all-round"];
 
 export const SectionInitial = () => {
 	return (
