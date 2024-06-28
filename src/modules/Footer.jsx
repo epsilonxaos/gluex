@@ -97,7 +97,7 @@ const NavFooter = () => {
 const CopyRight = () => {
 	return (
 		<>
-			CopyRight® | <Links url={"https://madeby.partners/"}>Developed by MadebyPartners</Links>
+			Copyright® | <Links url={"https://madeby.partners/"}>Designed by MadebyPartners</Links>
 		</>
 	);
 };

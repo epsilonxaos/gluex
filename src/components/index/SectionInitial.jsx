@@ -9,12 +9,11 @@ export const SectionInitial = () => {
 	return (
 		<div className="md:flex md:flex-col relative md:flex-wrap md:items-end md:justify-end max-md:min-h-svh max-md:pt-[140px] md:pb-[15vh] w-full h-full">
 			{/* //* Solo movil */}
-			<h1 className="md:hidden text-[48px] w-full text-center max-w-[305px] mx-auto mb-[50px]">
-				<WordTransition className="text-white" words={word2} />
-				&nbsp;with
-				<span className="flex items-center justify-center">
-					Glue
-					<svg className="w-[35px] inline ml-2" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 89.1 88.1" xmlSpace="preserve">
+			<div className="md:hidden text-[48px] w-full text-center mb-4 mx-auto">
+				<span className="overflow-hidden flex items-center justify-center w-full">
+					<WordTransition className="text-white" words={word2} based="Solve&nbsp;" />
+					<span>with Glue</span>
+					<svg className="w-[30px] relative top-1 inline ml-2" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 89.1 88.1" xmlSpace="preserve">
 						<g>
 							<path className="fill-white" d="M0.5,2.3l9.5,19c0.5,1,1.6,1.7,2.7,1.7h5.8v0c1.2,0,2.2,0.7,2.7,1.7l0,0L29,40.3c0.5,1,1.6,1.7,2.7,1.7h9.4 c1,0,1.6-1,1.2-1.9l-9.5-19c-0.5-1-1.6-1.7-2.7-1.7h-5.8v0c-1.2,0-2.2-0.7-2.7-1.7l0,0L13.8,2c-0.5-1-1.6-1.7-2.7-1.7H1.7 C0.7,0.3,0.1,1.4,0.5,2.3z" />
 							<path className="fill-white" d="M42.4,48l-9.5,19c-0.5,1-1.6,1.7-2.7,1.7h-5.8v0c-1.2,0-2.2,0.7-2.7,1.7l0,0L13.8,86c-0.5,1-1.6,1.7-2.7,1.7H1.7 c-1,0-1.6-1-1.2-1.9l9.5-19c0.5-1,1.6-1.7,2.7-1.7h5.8v0c1.2,0,2.2-0.7,2.7-1.7l0,0L29,47.8c0.5-1,1.6-1.7,2.7-1.7h9.4 C42.2,46.1,42.8,47.1,42.4,48z" />
@@ -23,20 +22,20 @@ export const SectionInitial = () => {
 						</g>
 					</svg>
 				</span>
-			</h1>
+			</div>
 
-			<img src={animate} alt="Animacion" className="w-[238px] object-cover h-[260px] mx-auto md:hidden mb-[60px]" />
+			<img src={animate} alt="Animacion" className="w-full mx-auto md:hidden " />
 
-			<p className="text-[28px] md:text-[32px] w-full text-center mb-[0px] md:mb-[8vh] px-[45px]">
-				<span className="block lg:inline">
-					A <WordTransition words={words} /> solving
-				</span>{" "}
-				ecosystem with strong track record.
+			<p className="text-[29px] leading-[30px] md:text-[32px] w-full text-center mb-[0px] md:mb-[8vh] px-4">
+				<span className="inline-block overflow-hidden">
+					A <WordTransition words={words} based="all-round" /> solving ecosystem
+				</span>
+				<span className="block md:inline">&nbsp;with strong track record.</span>
 			</p>
 
 			<div className="bg-gradient h-[70px] md:hidden"></div>
 			<div className="bg-black-noise md:bg-none pb-[80px] md:pb-0 w-full">
-				<ul className="bg-texture md:bg-none py-14 md:py-0 rounded-2xl max-w-max px-12 text-center md:flex md:items-center md:justify-between md:max-w-[960px] w-[95%] mx-auto font-auxMono">
+				<ul className=" py-14 md:py-0 rounded-2xl max-w-max px-12 text-center md:flex md:items-center md:justify-between md:max-w-[960px] w-[95%] mx-auto font-auxMono">
 					<li className="mb-[0px] md:mb-0">
 						<p className="text-xs lg:text-sm">TOTAL VALUE FLOW</p>
 						<p className="text-[18px] lg:text-[23px]">

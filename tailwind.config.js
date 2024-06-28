@@ -14,6 +14,7 @@ export default {
 			fontFamily: {
 				auxMono: ["Aux Mono", "sans-serif"],
 				aeonik: ["Aeonik", "sans-serif"],
+				darker: ["Darker Grotesque", "sans-serif"],
 			},
 			maxWidth: {
 				app: "1320px",

@@ -4,6 +4,7 @@ import Select from "./Select";
 import { useForm } from "react-hook-form";
 import { useContext, useEffect } from "react";
 import AppContext from "../context/AppContext";
+import axios from "axios";
 
 export const ModalContacto = () => {
 	const { state, dispatch } = useContext(AppContext);
@@ -21,17 +22,10 @@ export const ModalContacto = () => {
 				onClick={(ev) => {
 					ev.stopPropagation();
 				}}
-				className="w-full max-w-[800px] mx-auto bg-black py-10 rounded-md px-4 md:px-10"
+				className="w-full max-w-[800px] mx-auto bg-texture py-10 md:py-20 rounded-md px-4 md:px-16"
 			>
 				<div className="text-center mb-8">
-					<h3 className="text-salmon font-bold text-2xl mb-8">Partnerships, Integrations & Collaborations</h3>
-
-					<p className="mb-3">GlueX Protocol is an open-access solving ecosystem for intent-based dApps - enabling chain abstraction, compute-cost abstraction and optimal execution from of the get-go. </p>
-					<p className="mb-3">
-						Please fill in this form if you are interested in <span className="underline">partnership, integrations and collaboration opportunities</span> and want to get in touch.
-					</p>
-
-					<p className="mb-3">We are getting back to everyone as soon as possible. Due to high demand this might take some days, please share as much information as possible.</p>
+					<h3 className="text-whiet text-2xl mb-8">Partnerships, Integrations & Collaborations</h3>
 				</div>
 
 				<FormContacto />
@@ -64,32 +58,34 @@ const FormContacto = () => {
 	} = useForm();
 
 	const onSubmit = async (data) => {
-		let { email, project, contact, looking, share } = data;
+		var form_data = new FormData();
 
-		toast("Sending...");
+		for (var key in data) {
+			form_data.append(key, data[key]);
+		}
+		const envio = axios.post("enviar_correo.php", form_data);
+		toast.promise(envio, { loading: "Sending...", success: "Message sent!", error: "Error send message" });
 
-		setTimeout(() => {
-			toast("Message sent!");
+		envio.then(() => {
 			reset();
-		}, 3000);
+			dispatch({ openModalContact: false });
+		});
 	};
-
-	console.log();
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} action="" className="grid grid-cols-1 md:grid-cols-2 gap-4">
 			<Input className={"col-span-1"} validate={true} register={register} rules={{ required: "This field is required" }} validateError={!!errors.email} validateErrorMessage={errors.email?.message} label={"Email"} name={"email"} />
-			<Input className={"col-span-1"} validate={true} register={register} rules={{ required: "This field is required" }} validateError={!!errors.project} validateErrorMessage={errors.project?.message} label={"Project"} name={"project"} placeholder="Name & homepage/Twitter" />
 			<Input className={"col-span-1"} validate={true} register={register} rules={{ required: "This field is required" }} validateError={!!errors.contact} validateErrorMessage={errors.contact?.message} label={"Contact"} name={"contact"} placeholder="Name & e-mail/Telegram" />
+			<Input className={"col-span-1"} validate={true} register={register} rules={{ required: "This field is required" }} validateError={!!errors.project} validateErrorMessage={errors.project?.message} label={"Project"} name={"project"} placeholder="Name & homepage/Twitter" />
 			<Select className={"col-span-1"} validate={true} register={register} rules={{ required: "This field is required" }} validateError={!!errors.looking} validateErrorMessage={errors.looking?.message} label={"Looking for"} name={"looking"} options={optionsSelectLookingFor} />
 			{watch("looking") == "Other" && <Input className={"col-span-1 md:col-span-2"} validate={true} register={register} rules={{ required: "This field is required" }} validateError={!!errors.other} validateErrorMessage={errors.other?.message} label={"Write your answer about what you are looking for"} name={"other"} />}
 			<Input className={"col-span-1 md:col-span-2"} validate={true} register={register} rules={{ required: "This field is required" }} validateError={!!errors.share} validateErrorMessage={errors.share?.message} label={"Share more context"} name={"share"} />
 
 			<div className="col-span-1 md:col-span-2 text-center flex items-center justify-center gap-4">
-				<button onClick={() => dispatch({ openModalContact: false })} type="button" className="bg-gray-600 py-2 px-8 rounded-sm text-white">
+				<button onClick={() => dispatch({ openModalContact: false })} type="button" className="bg-[#454545] uppercase w-full font-auxMono text-sm py-2 px-8 text-verde">
 					Cancel
 				</button>
-				<button type="submit" className="bg-verde py-2 px-8 rounded-sm text-black">
+				<button type="submit" className="bg-verde py-2 px-8 font-auxMono w-full text-sm uppercase text-black">
 					Send
 				</button>
 			</div>

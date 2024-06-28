@@ -1,57 +1,67 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
-export const WordTransition = ({ words = [], className = "" }) => {
-	const [currentWord, setCurrentWord] = useState(words[0]);
-	const [displayedText, setDisplayedText] = useState(words[0]);
-	const [phase, setPhase] = useState("remove");
-
-	useEffect(() => {
-		let timeout;
-
-		if (phase === "remove") {
-			if (displayedText.length > 0) {
-				timeout = setTimeout(() => {
-					setDisplayedText(displayedText.slice(0, -1));
-				}, 50);
-			} else {
-				setPhase("add");
-				setCurrentWord(words[(words.indexOf(currentWord) + 1) % words.length]);
-			}
-		} else if (phase === "add") {
-			if (displayedText.length < currentWord.length) {
-				timeout = setTimeout(() => {
-					setDisplayedText(currentWord.slice(0, displayedText.length + 1));
-				}, 100);
-			} else {
-				timeout = setTimeout(() => {
-					setPhase("remove");
-				}, 4000);
-			}
-		}
-
-		return () => clearTimeout(timeout);
-	}, [displayedText, phase, currentWord]);
-
-	return <motion.span className={twMerge("text-verde", className)}>{displayedText}</motion.span>;
+const vr = {
+	enter: {
+		y: 60,
+		opacity: 0,
+	},
+	center: {
+		y: 0,
+		opacity: 1,
+	},
+	exit: {
+		y: -100,
+		opacity: 0,
+	},
 };
 
-// export const WordTransition = ({ words }) => {
-// 	const [index, setIndex] = useState(0);
+export const WordTransition = ({ words, className, based = "" }) => {
+	const [index, setIndex] = useState(0);
 
-// 	useEffect(() => {
-// 		const interval = setInterval(() => {
-// 			setIndex((prevIndex) => (prevIndex + 1) % words.length);
-// 		}, 2000); // Cambia cada 2 segundos
-// 		return () => clearInterval(interval);
-// 	}, []);
+	const [isAnimating, setIsAnimating] = useState(false);
 
-// 	return (
-// 		<AnimatePresence>
-// 			<motion.span key={words[index]} className="text-verde inline-block" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} transition={{ duration: 0.5 }}>
-// 				{words[index]}
-// 			</motion.span>
-// 		</AnimatePresence>
-// 	);
-// };
+	useEffect(() => {
+		const handleVisibilityChange = () => {
+			if (document.visibilityState === "visible") {
+				setIsAnimating(false);
+			}
+		};
+
+		document.addEventListener("visibilitychange", handleVisibilityChange);
+
+		if (!isAnimating) {
+			const timeout = setTimeout(() => {
+				setIsAnimating(true);
+				setIndex((prevIndex) => (prevIndex + 1) % words.length);
+			}, 2000);
+			return () => {
+				clearTimeout(timeout);
+				document.removeEventListener("visibilitychange", handleVisibilityChange);
+			};
+		}
+	}, [index, isAnimating, words.length]);
+
+	return (
+		<span className={twMerge("relative inline text-verde overflow-hidden text-center", className)}>
+			<span className="opacity-0">{based}</span>
+			<AnimatePresence initial={false}>
+				<motion.span
+					className=" absolute top-0 left-0 size-full flex items-center justify-center"
+					key={words[index]}
+					variants={vr}
+					initial="enter"
+					animate="center"
+					exit="exit"
+					transition={{
+						opacity: { duration: 0.5 },
+					}}
+					onAnimationComplete={() => setIsAnimating(false)}
+				>
+					{words[index]}
+				</motion.span>
+			</AnimatePresence>
+		</span>
+	);
+};
