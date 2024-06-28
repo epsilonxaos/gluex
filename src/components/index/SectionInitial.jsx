@@ -2,6 +2,7 @@ import AnimatedNumber from "../animation/AnimatedNumber";
 import { WordTransition } from "../animation/WordTransition";
 import animate from "../../assets/img/animate.gif";
 
+const word2 = ["Earn", "Solve", "Build"];
 const words = ["flexible", "powerful", "all-round"];
 
 export const SectionInitial = () => {
@@ -9,7 +10,8 @@ export const SectionInitial = () => {
 		<div className="md:flex md:flex-col relative md:flex-wrap md:items-end md:justify-end max-md:min-h-svh max-md:pt-[140px] md:pb-[15vh] w-full h-full">
 			{/* //* Solo movil */}
 			<h1 className="md:hidden text-[48px] w-full text-center max-w-[305px] mx-auto mb-[50px]">
-				Earn with{" "}
+				<WordTransition className="text-white" words={word2} />
+				&nbsp;with
 				<span className="flex items-center justify-center">
 					Glue
 					<svg className="w-[35px] inline ml-2" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 89.1 88.1" xmlSpace="preserve">

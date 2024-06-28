@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { twMerge } from "tailwind-merge";
 
-export const WordTransition = ({ words = [] }) => {
+export const WordTransition = ({ words = [], className = "" }) => {
 	const [currentWord, setCurrentWord] = useState(words[0]);
 	const [displayedText, setDisplayedText] = useState(words[0]);
 	const [phase, setPhase] = useState("remove");
@@ -33,7 +34,7 @@ export const WordTransition = ({ words = [] }) => {
 		return () => clearTimeout(timeout);
 	}, [displayedText, phase, currentWord]);
 
-	return <motion.span className="text-verde">{displayedText}</motion.span>;
+	return <motion.span className={twMerge("text-verde", className)}>{displayedText}</motion.span>;
 };
 
 // export const WordTransition = ({ words }) => {
