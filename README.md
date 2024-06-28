@@ -1,8 +1,24 @@
-# React + Vite
+# GlueX
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Requerimientos
 
-Currently, two official plugins are available:
+1. Php >= 8.1.x
+2. Node >= 18.x
+3. Npm >= 9.8.x
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Instalación, configuración y compilado
+
+Ejecutar los siguientes comandos:
+
+`npm install`
+
+`npm run build`
+
+Configurar en enviar_correo.php el mailFrom con el que se enviara el correo
+
+Ejemplo: `$mailFrom = soporte@domain.com`
+
+### Despliegue
+
+1. Subir el contenido de la carpeta dist a publi_html
+2. Subir el archivo enviar_correo.php a publi_html

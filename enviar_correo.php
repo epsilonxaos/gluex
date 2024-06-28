@@ -4,6 +4,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
+		$mailFrom = 'dev@madeby.partners';
+
 		$contact = $_POST['contact'];
 		$project = $_POST['project'];
 		$looking = $_POST['looking'];
@@ -12,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		$to = $email;
 		$subject = "Partnerships, Integrations & Collaborations";
-		$headers = "From: dev@madeby.partners";
+		$headers = "From: $mailFrom";
 
 		$message = "A person left their information about Partnerships, Integrations & Collaborations: \n\n";
 		$message .= "Contact: $contact \n";
