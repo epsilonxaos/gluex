@@ -26,9 +26,9 @@ export const Footer = () => {
 				<nav className="py-10 md:hidden">
 					<div className="flex items-center justify-center gap-6 mb-7">
 						<SocialMedia />
-						<Links className={"flex items-center"}>
+						{/* <Links className={"flex items-center"}>
 							<FaTelegram size={iconSize} className="inline-block mr-2" /> 000 000 0000
-						</Links>
+						</Links> */}
 					</div>
 
 					<NavFooter />
@@ -44,7 +44,7 @@ export const Footer = () => {
 
 const SocialMedia = () => {
 	return (
-		<ul className="grid grid-cols-3 max-w-max gap-2 md:mr-3 lg:mr-6">
+		<ul className="grid grid-cols-3 max-w-max gap-2 md:mr-6">
 			<li className="col-span-1">
 				<Links url={"https://www.linkedin.com/company/gluex-protocol/"}>
 					<FaLinkedin size={iconSize} />
@@ -53,6 +53,11 @@ const SocialMedia = () => {
 			<li className="col-span-1">
 				<Links url={"https://x.com/GluexProtocol"}>
 					<FaXTwitter size={iconSize} />
+				</Links>
+			</li>
+			<li className="col-span-1">
+				<Links className={"flex items-center"} url={"https://t.me/+yf_US2ACNrgyNzY0"}>
+					<FaTelegram size={iconSize} />
 				</Links>
 			</li>
 			{/* <li className="col-span-1">
@@ -69,11 +74,11 @@ const NavFooter = () => {
 
 	return (
 		<ul className="flex items-center gap-8 md:gap-5 lg:gap-8 max-w-max max-md:mx-auto">
-			<li className="hidden md:block">
+			{/* <li className="hidden md:block">
 				<Links className={"flex items-center"} url={"https://t.me/+yf_US2ACNrgyNzY0"}>
 					<FaTelegram size={iconSize} className="inline-block mr-2" /> 000 000 0000
 				</Links>
-			</li>
+			</li> */}
 			<li className="">
 				<Links.Mail mail={"conttact@gluex.xyz"}>Mail</Links.Mail>
 			</li>
