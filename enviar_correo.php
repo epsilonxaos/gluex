@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-		$mailFrom = 'dev@madeby.partners';
+		$mailFrom = '';
 
 		$contact = $_POST['contact'];
 		$project = $_POST['project'];
