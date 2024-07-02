@@ -87,7 +87,7 @@ const NavFooter = () => {
 				</button>
 			</li>
 			<li className="">
-				<Links url={"http://blog.gluex.xyz/"}>Blog</Links>
+				<Links url={"https://mirror.xyz/gluex.eth"}>Blog</Links>
 			</li>
 		</ul>
 	);
