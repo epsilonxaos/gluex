@@ -37,27 +37,8 @@ export const Header = () => {
 						<AnimatePresence>
 							{open && (
 								<nav className="mr-16 ">
-									<motion.ul initial="hidden" animate="visible" exit="hidden" variants={containerVariants} className="hidden items-center justify-end gap-16 text-xs font-auxMono md:flex">
-										<motion.li variants={variantEscritorio} transition={{ duration: 0.3 }}>
-											<Links>Blog</Links>
-										</motion.li>
-										<motion.li variants={variantEscritorio} transition={{ duration: 0.3 }}>
-											<button className="text-white hover:text-verde" type="button" onClick={() => dispatch({ openModalContact: true })}>
-												Integrate
-											</button>
-										</motion.li>
-									</motion.ul>
-
-									<motion.ul initial="hidden" animate="visible" exit="hidden" variants={containerVariants} className="absolute top-full text-right right-10 text-xs font-auxMono md:hidden">
-										<motion.li className="mb-4" variants={variantEscritorio} transition={{ duration: 0.3 }}>
-											<Links>Blog</Links>
-										</motion.li>
-										<motion.li variants={variantEscritorio} transition={{ duration: 0.3 }}>
-											<button className="text-white hover:text-verde" type="button" onClick={() => dispatch({ openModalContact: true })}>
-												Integrate
-											</button>
-										</motion.li>
-									</motion.ul>
+									<Menu className="hidden items-center justify-end gap-16 text-xs font-auxMono md:flex" />
+									<Menu className="absolute top-full text-right right-10 text-xs font-auxMono md:hidden" />
 								</nav>
 							)}
 						</AnimatePresence>
@@ -80,5 +61,22 @@ export const Header = () => {
 				</nav>
 			</div>
 		</header>
+	);
+};
+
+const Menu = ({ className = "" }) => {
+	const { dispatch } = useContext(AppContext);
+
+	return (
+		<motion.ul initial="hidden" animate="visible" exit="hidden" variants={containerVariants} className={className}>
+			<motion.li className="mb-4" variants={variantEscritorio} transition={{ duration: 0.3 }}>
+				<Links url={"https://mirror.xyz/gluex.eth"}>Blog</Links>
+			</motion.li>
+			<motion.li variants={variantEscritorio} transition={{ duration: 0.3 }}>
+				<button className="text-white hover:text-verde" type="button" onClick={() => dispatch({ openModalContact: true })}>
+					Integrate
+				</button>
+			</motion.li>
+		</motion.ul>
 	);
 };

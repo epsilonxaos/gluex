@@ -80,7 +80,7 @@ const NavFooter = () => {
 				</Links>
 			</li> */}
 			<li className="">
-				<Links.Mail mail={"conttact@gluex.xyz"}>Mail</Links.Mail>
+				<Links.Mail mail={"contact@gluex.xyz"}>Mail</Links.Mail>
 			</li>
 			<li className="">
 				<button type="button" onClick={() => dispatch({ openModalContact: true })}>
