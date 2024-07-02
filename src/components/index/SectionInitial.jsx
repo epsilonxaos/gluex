@@ -28,13 +28,13 @@ export const SectionInitial = () => {
 
 			<p className="text-[29px] leading-[30px] md:text-[32px] w-full text-center mb-[0px] md:mb-[8vh] px-4 md:flex md:items-center md:justify-center">
 				<span className="inline-flex">
-					A{" "}
+					The most{" "}
 					<div className="overflow-hidden">
 						<WordTransition words={words} based="&nbsp;all-round&nbsp;" />
 					</div>{" "}
-					solving ecosystem
+					solve computing
 				</span>
-				<span className="block md:inline">&nbsp;with strong track record.</span>
+				<span className="block md:inline">&nbsp;protocol for DeFi.</span>
 			</p>
 
 			<div className="bg-gradient h-[70px] md:hidden"></div>
