@@ -24,7 +24,7 @@ export const SectionInitial = () => {
 				</span>
 			</div>
 
-			<img src={animate} alt="Animacion" className="w-full mx-auto md:hidden " />
+			<img src={animate} alt="Animacion" className="w-full max-w-[375px] mx-auto md:hidden " />
 
 			<p className="text-[20px] leading-[30px] md:text-[32px] w-full text-center mb-[0px] md:mb-[8vh] px-4 md:flex md:items-center md:justify-center">
 				<span className="inline-flex">
