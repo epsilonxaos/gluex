@@ -1,10 +1,40 @@
 <?php
+
+
+function loadEnv($path)
+{
+	if (!file_exists($path)) {
+		throw new Exception("El archivo .env no existe: $path");
+	}
+
+	$lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+	foreach ($lines as $line) {
+		if (strpos(trim($line), '#') === 0) {
+			continue;
+		}
+
+		list($name, $value) = explode('=', $line, 2);
+		$name = trim($name);
+		$value = trim($value);
+
+		if (!array_key_exists($name, $_SERVER) && !array_key_exists($name, $_ENV)) {
+			putenv("$name=$value");
+			$_ENV[$name] = $value;
+			$_SERVER[$name] = $value;
+		}
+	}
+}
+
+// Usar la función para cargar las variables de entorno
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
 	if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		loadEnv(__DIR__ . '/.env');
 
-		$mailFrom = '';
+		$mailFrom = getenv('MAIL_FROM');
 
 		$contact = $_POST['contact'];
 		$project = $_POST['project'];

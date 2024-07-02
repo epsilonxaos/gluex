@@ -2,23 +2,36 @@
 
 ### Requerimientos
 
-1. Php >= 8.1.x
+1. PHP >= 8.1.x
 2. Node >= 18.x
-3. Npm >= 9.8.x
+3. NPM >= 9.8.x
 
 ### Instalación, configuración y compilado
 
 Ejecutar los siguientes comandos:
 
-`npm install`
+```sh
+npm install
+```
 
-`npm run build`
+```sh
+npm run build
+```
 
-Configurar en enviar_correo.php el mailFrom con el que se enviara el correo
+### Configuración del envío de correo
 
-Ejemplo: `$mailFrom = soporte@domain.com`
+Crear el archivo `.env`
+
+```sh
+cp .env.example .env
+```
+
+En el archivo `.env`, configurar la variable `MAIL_FROM`.
+
+Ejemplo:
+`MAIL_FROM=soporte@domain.com`
 
 ### Despliegue
 
-1. Subir el contenido de la carpeta dist a publi_html
-2. Subir el archivo enviar_correo.php a publi_html
+1. Subir el contenido de la carpeta `dist` a `public_html`.
+2. Subir el archivo `enviar_correo.php` a `public_html`.
