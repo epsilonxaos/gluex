@@ -24,14 +24,13 @@ export const Footer = () => {
 				</nav>
 
 				<nav className="py-10 md:hidden">
-					<div className="flex items-center justify-center gap-6 mb-7">
+					<div className="flex items-center justify-center mb-7 gap-8">
 						<SocialMedia />
 						{/* <Links className={"flex items-center"}>
 							<FaTelegram size={iconSize} className="inline-block mr-2" /> 000 000 0000
 						</Links> */}
+						<NavFooter />
 					</div>
-
-					<NavFooter />
 
 					<p className="mt-7 text-center">
 						<CopyRight />
@@ -44,7 +43,7 @@ export const Footer = () => {
 
 const SocialMedia = () => {
 	return (
-		<ul className="grid grid-cols-3 max-w-max gap-2 md:mr-6">
+		<ul className="grid grid-cols-2 max-w-max gap-2 md:mr-6">
 			{/* <li className="col-span-1">
 				<Links url={"https://www.linkedin.com/company/gluex-protocol/"}>
 					<FaLinkedin size={iconSize} />
@@ -73,7 +72,7 @@ const NavFooter = () => {
 	const { dispatch } = useContext(AppContext);
 
 	return (
-		<ul className="flex items-center gap-8 md:gap-5 lg:gap-8 max-w-max max-md:mx-auto">
+		<ul className="flex items-center gap-8 md:gap-5 lg:gap-8 max-w-max">
 			{/* <li className="hidden md:block">
 				<Links className={"flex items-center"} url={"https://t.me/+yf_US2ACNrgyNzY0"}>
 					<FaTelegram size={iconSize} className="inline-block mr-2" /> 000 000 0000
