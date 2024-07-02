@@ -69,7 +69,7 @@ const Menu = ({ className = "" }) => {
 
 	return (
 		<motion.ul initial="hidden" animate="visible" exit="hidden" variants={containerVariants} className={className}>
-			<motion.li className="mb-4" variants={variantEscritorio} transition={{ duration: 0.3 }}>
+			<motion.li className="mb-4 md:mb-0" variants={variantEscritorio} transition={{ duration: 0.3 }}>
 				<Links url={"https://mirror.xyz/gluex.eth"}>Blog</Links>
 			</motion.li>
 			<motion.li variants={variantEscritorio} transition={{ duration: 0.3 }}>
