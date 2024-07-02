@@ -1,11 +1,11 @@
 import { Toaster } from "sonner";
-import { BubblesAnimation } from "./components/BubblesAnimation";
 import { ModalContacto } from "./components/ModalContacto";
 import { Footer } from "./modules/Footer";
 import { Header } from "./modules/Header";
 import { Home } from "./pages/Home";
 import AppContext from "./context/AppContext";
 import { useReducer } from "react";
+import { BubblesAnimation } from "./components/animation/BubblesAnimation";
 
 const initialArgs = {
 	openModalContact: false,
