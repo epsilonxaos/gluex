@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { bubbleInit } from "../../utils/bubblesAnimation";
 
-import "../css/bubblesAnimation.css";
+import "../../css/bubblesAnimation.css";
 import { twMerge } from "tailwind-merge";
 
 export const BubblesAnimation = ({ className = "", children }) => {
