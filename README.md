@@ -26,12 +26,26 @@ Crear el archivo `.env`
 cp .env.example .env
 ```
 
-En el archivo `.env`, configurar la variable `MAIL_FROM`.
+En el archivo `.env`, configurar las variables SMTP.
 
-Ejemplo:
-`MAIL_FROM=soporte@domain.com`
+```
+MAIL_HOST=smtp.host.com
+MAIL_PORT=465
+MAIL_USERNAME=soporte@test.com
+MAIL_PASSWORD=secret
+MAIL_FROM_ADDRESS=soporte@test.com
+MAIL_TO_ADDRESS=contacto@etest.com
+MAIL_FROM_NAME=Glue X
+```
+
+Instalar vendors
+
+```sh
+composer install
+```
 
 ### Despliegue
 
 1. Subir el contenido de la carpeta `dist` a `public_html`.
 2. Subir el archivo `enviar_correo.php` a `public_html`.
+3. Subir carpeta vendor a `public_html`.
