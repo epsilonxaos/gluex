@@ -1,0 +1,12 @@
+{
+    "name": "vendor/app",
+    "authors": [
+        {
+            "name": "Jesus Glez",
+            "email": "jesusgleztr94@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}
