@@ -2,8 +2,13 @@ import MainSection from "../components/home/MainSection";
 
 export const Home = () => {
 	return (
-		<div className="relative z-10 max-w-app mx-auto px-10">
+		<main className="relative z-10">
 			<MainSection />
-		</div>
+
+			<div className="max-w-app mx-auto px-10">
+				<div className="h-svh"></div>
+				<div className="h-svh"></div>
+			</div>
+		</main>
 	);
 };

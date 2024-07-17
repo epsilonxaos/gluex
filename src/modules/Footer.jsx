@@ -8,7 +8,7 @@ const iconSize = 14;
 
 export const Footer = () => {
 	return (
-		<footer className="px-7 lg:px-10 relative w-full z-50 bg-black-noise md:bg-none">
+		<footer className="px-7 lg:px-10 relative w-full z-50 ">
 			<div className="max-w-app mx-auto font-auxMono text-[10px] leading-[11px]">
 				<hr className="border-t border-verde" />
 
