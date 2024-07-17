@@ -1,3 +1,4 @@
+import CountSection from "../components/home/CountSection";
 import MainSection from "../components/home/MainSection";
 
 export const Home = () => {
@@ -6,8 +7,7 @@ export const Home = () => {
 			<MainSection />
 
 			<div className="max-w-app mx-auto px-10">
-				<div className="h-svh"></div>
-				<div className="h-svh"></div>
+				<CountSection />
 			</div>
 		</main>
 	);

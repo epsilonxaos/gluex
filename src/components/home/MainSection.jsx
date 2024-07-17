@@ -5,7 +5,7 @@ const MainSection = () => {
 	return (
 		<section className="bg-texture-etapa2-luces w-full">
 			<div className="max-w-app mx-auto px-10">
-				<div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-start  md:min-h-svh md:w-[90%] mx-auto py-14 pt-[120px]">
+				<div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-start  md:min-h-svh md:w-[90%] mx-auto md:pb-[60px] pt-[120px]">
 					<div className="col-span-1 mb-[40px] lg:mb-0">
 						<h1 className="text-[40px] max-w-[265px] text-center md:text-[60px] lg:text-[96px] leading-none md:max-w-[430px] mx-auto">
 							Earn, Solve <br className="md:hidden" /> and Build with <br className="md:hidden" />

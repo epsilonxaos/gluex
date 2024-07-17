@@ -27,7 +27,7 @@ export const Header = () => {
 	const handleToggle = () => setOpen(!open);
 
 	return (
-		<header className="absolute md:fixed top-0 px-10 left-0 w-full z-50">
+		<header className="absolute px-10 w-full z-50">
 			<div className="max-w-app mx-auto">
 				<nav className="grid grid-cols-2 py-7 items-center">
 					<div className="col-span-1">
