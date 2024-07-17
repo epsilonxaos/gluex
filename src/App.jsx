@@ -5,7 +5,6 @@ import { Header } from "./modules/Header";
 import { Home } from "./pages/Home";
 import AppContext from "./context/AppContext";
 import { useReducer } from "react";
-import { BubblesAnimation } from "./components/animation/BubblesAnimation";
 
 const initialArgs = {
 	openModalContact: false,
