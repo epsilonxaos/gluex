@@ -24,7 +24,7 @@ function App() {
 
 			<main>
 				<BubblesAnimation className="fixed top-0 left-0 h-svh w-full">
-					<div className="hidden md:block text-center text-[96px] absolute z-[1] top-[40%] -translate-y-1/2 w-full">
+					{/* <div className="hidden md:block text-center text-[96px] absolute z-[1] top-[40%] -translate-y-1/2 w-full">
 						<span className="overflow-hidden block leading-none">Earn, Solve and Build</span>
 						<div className="leading-none flex items-center justify-center">
 							<span>with Glue</span>
@@ -37,7 +37,7 @@ function App() {
 								</g>
 							</svg>
 						</div>
-					</div>
+					</div> */}
 				</BubblesAnimation>
 
 				<Home />
