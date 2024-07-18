@@ -4,7 +4,7 @@ import iconFlexible from "../../assets/img/icon/icon-flexible.svg";
 import iconoPowerfull from "../../assets/img/icon/icon-powerfull.svg";
 import iconAllround from "../../assets/img/icon/icon-allround.svg";
 
-const AboutSection = () => {
+const ProtocolSection = () => {
 	return (
 		<section className="w-full lg:w-[85%] mx-auto md:py-[60px]">
 			<h3 className="font-auxMono text-[32px] md:text-[40px] text-center mb-3">
@@ -34,4 +34,4 @@ const AboutSection = () => {
 	);
 };
 
-export default AboutSection;
+export default ProtocolSection;
