@@ -3,6 +3,7 @@ import CountSection from "../components/home/CountSection";
 import MainSection from "../components/home/MainSection";
 import SolutionsSection from "../components/home/SolutionsSection";
 import LiquiditySection from "../components/home/LiquiditySection";
+import BrandSection from "../components/home/BrandSection";
 
 export const Home = () => {
 	return (
@@ -19,6 +20,8 @@ export const Home = () => {
 
 			<div className="max-w-app mx-auto px-10">
 				<LiquiditySection />
+
+				<BrandSection />
 			</div>
 		</main>
 	);
