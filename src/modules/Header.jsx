@@ -5,6 +5,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { IoCloseOutline } from "react-icons/io5";
 import AppContext from "../context/AppContext";
 
+import iconLiquid1 from "../assets/img/menu/liquid1.svg";
+import iconLiquid2 from "../assets/img/menu/liquid2.svg";
+import iconProtocol1 from "../assets/img/menu/protocol1.svg";
+import iconProtocol2 from "../assets/img/menu/protocol2.svg";
+
 const containerVariants = {
 	hidden: { opacity: 0 },
 	visible: {
@@ -22,7 +27,6 @@ const variantEscritorio = {
 
 export const Header = () => {
 	const [open, setOpen] = useState(false);
-	const { dispatch } = useContext(AppContext);
 
 	const handleToggle = () => setOpen(!open);
 
@@ -36,16 +40,16 @@ export const Header = () => {
 					<div className="col-span-1 flex items-center justify-end">
 						<AnimatePresence>
 							{open && (
-								<nav className="mr-16 ">
-									<Menu className="hidden items-center justify-end gap-16 text-xs font-auxMono md:flex" />
+								<nav className="mr-12">
+									<Menu className="hidden items-center justify-end gap-12 text-xs font-auxMono md:flex" />
 									<Menu className="absolute top-full text-right right-10 text-xs font-auxMono md:hidden" />
 								</nav>
 							)}
 						</AnimatePresence>
 
-						<button type="button" className="h-[30px] flex items-center justify-center" onClick={handleToggle}>
+						<button type="button" className="h-[30px] w-[30px] flex items-center justify-center" onClick={handleToggle}>
 							{!open ? (
-								<svg className="w-[18px] inline-block cursor-pointer" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 89.1 68.8" xmlSpace="preserve">
+								<svg className="w-[30px] scale-[.65] block cursor-pointer" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 89.1 68.8" xmlSpace="preserve">
 									<g>
 										<path fill="white" d="M3.8,68.8h81.4c2.1,0,3.8-1.7,3.8-3.8v-3.3c0-2.1-1.7-3.8-3.8-3.8H3.8c-2.1,0-3.8,1.7-3.8,3.8L0,65 C0,67.1,1.7,68.8,3.8,68.8z" />
 										<path fill="white" d="M25,39.9h60.2c2.1,0,3.8-1.7,3.8-3.8v-3.3c0-2.1-1.7-3.8-3.8-3.8H25c-2.1,0-3.8,1.7-3.8,3.8V36 C21.2,38.2,22.9,39.9,25,39.9z" />
@@ -53,9 +57,8 @@ export const Header = () => {
 									</g>
 								</svg>
 							) : (
-								<IoCloseOutline size={30} className="relative -right-1.5" />
+								<IoCloseOutline size={30} className="relative" />
 							)}
-							{/* <IoCloseOutline size={32} /> */}
 						</button>
 					</div>
 				</nav>
@@ -67,8 +70,45 @@ export const Header = () => {
 const Menu = ({ className = "" }) => {
 	const { dispatch } = useContext(AppContext);
 
+	const [open, setOpen] = useState(false);
+
 	return (
 		<motion.ul initial="hidden" animate="visible" exit="hidden" variants={containerVariants} className={className}>
+			<motion.li className="mb-4 md:mb-0 relative" variants={variantEscritorio} transition={{ duration: 0.3 }}>
+				<button onClick={() => setOpen(!open)} className={`text-white  ${open ? "hover:text-salmon !text-salmon" : "hover:text-verde"}`} type="button">
+					Product
+				</button>
+
+				{open && (
+					<div className="md:absolute w-[220px] md:top-8 text-right md:text-left pt-2">
+						<h4 className="text-xs mb-2">For Liquidity Providers</h4>
+						<ul className="text-[10px] mb-2 pl-4">
+							<li className="mb-2 flex items-center justify-end md:justify-start">
+								<img className="size-[13px] mr-2" src={iconLiquid1} alt="" />
+								GlueX Liquidity Pools
+							</li>
+							<li className="flex items-center justify-end md:justify-start">
+								<img className="size-[13px] mr-2" src={iconLiquid2} alt="" /> GlueX Limit Order Book
+							</li>
+						</ul>
+						<h4 className="text-xs mb-2">For Protocols and dApps</h4>
+						<ul className="text-[10px] pl-4">
+							<li className="mb-2 flex items-center justify-end md:justify-start">
+								<img className="size-[13px] mr-2" src={iconProtocol1} alt="" /> GlueX SDK
+							</li>
+							<li className="flex items-center justify-end md:justify-start">
+								<img className="size-[13px] mr-2" src={iconProtocol2} alt="" /> GlueX Hooks
+							</li>
+						</ul>
+					</div>
+				)}
+			</motion.li>
+			<motion.li className="mb-4 md:mb-0" variants={variantEscritorio} transition={{ duration: 0.3 }}>
+				<Links url={"https://mirror.xyz/gluex.eth"}>Whitepaper</Links>
+			</motion.li>
+			<motion.li className="mb-4 md:mb-0" variants={variantEscritorio} transition={{ duration: 0.3 }}>
+				<Links url={"https://mirror.xyz/gluex.eth"}>Jobs</Links>
+			</motion.li>
 			<motion.li className="mb-4 md:mb-0" variants={variantEscritorio} transition={{ duration: 0.3 }}>
 				<Links url={"https://mirror.xyz/gluex.eth"}>Blog</Links>
 			</motion.li>
