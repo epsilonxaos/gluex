@@ -6,14 +6,14 @@ import iconAllround from "../../assets/img/icon/icon-allround.svg";
 
 const ProtocolSection = () => {
 	return (
-		<section className="w-full lg:w-[85%] mx-auto md:py-[60px] lg:py-[130px]">
+		<section className="w-full lg:w-[85%] mx-auto pt-[30px] pb-[60px] md:py-[60px] lg:py-[130px]">
 			<h3 className="font-auxMono text-[32px] md:text-[40px] text-center mb-3">
 				<span className="text-salmon">GlueX</span> Protocol
 			</h3>
 
 			<Text className={"max-w-[750px] mx-auto md:text-xl lg:text-2xl text-center mb-[80px]"}>A solving framework that abstracts away the differences among blockchains, intents, originators and liquidity providers.</Text>
 
-			<ul className="md:flex md:items-start md:justify-between">
+			<ul className="md:flex md:items-start md:justify-between text-center md:text-left">
 				<li className="max-md:mx-auto max-w-[295px] mb-10 md:mb-0 md:max-w-[250px] max-md:bg-[#151515B2] max-md:rounded-[30px] max-md:py-[50px] max-md:px-6">
 					<img src={iconFlexible} className="w-auto mx-auto md:ml-0 h-[50px] mb-9 md:mb-4" alt="Icon flexible" />
 					<Text className={"font-auxMono uppercase"}>Flexible</Text>

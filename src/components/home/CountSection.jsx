@@ -99,7 +99,7 @@ const FlowValue = () => {
 			<p className="text-[18px] md:text-[40px] relative md:max-w-max">
 				+$
 				<AnimatedNumber value={32000000000} />
-				<span className="border-t w-full absolute block bottom-2 left-0"></span>
+				<span className="hidden md:block border-t w-full absolute bottom-2 left-0"></span>
 			</p>
 		</>
 	);
@@ -111,7 +111,7 @@ const SettledValue = () => {
 			<p className="text-xs lg:text-sm">TOTAL INTENTS SETTLED</p>
 			<p className="text-[18px] md:text-[40px] relative md:max-w-max">
 				+<AnimatedNumber value={300000} />
-				<span className="border-t w-full absolute block bottom-2 left-0"></span>
+				<span className="hidden md:block border-t w-full absolute bottom-2 left-0"></span>
 			</p>
 		</>
 	);
@@ -124,7 +124,7 @@ const SolvedValue = () => {
 			<p className="text-[18px] md:text-[40px] relative md:max-w-max">
 				+$
 				<AnimatedNumber value={6000000000} />
-				<span className="border-t w-full absolute block bottom-2 left-0"></span>
+				<span className="hidden md:block border-t w-full absolute bottom-2 left-0"></span>
 			</p>
 		</>
 	);
