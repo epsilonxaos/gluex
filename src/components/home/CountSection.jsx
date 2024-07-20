@@ -63,6 +63,7 @@ const CountSection = () => {
 				<Swiper
 					modules={[Autoplay]}
 					speed={1500}
+					loop={true}
 					autoplay={{
 						delay: 9000,
 						disableOnInteraction: false,
@@ -71,7 +72,10 @@ const CountSection = () => {
 					onSwiper={(swiper) => {
 						swiperRef.current = swiper;
 					}}
-					onSlideChange={(s) => setSwiperIndex(s.activeIndex + 1)}
+					onSlideChange={(s) => {
+						setSwiperIndex(s.realIndex + 1);
+						console.log(s);
+					}}
 				>
 					<SwiperSlide>
 						<FlowValue />
