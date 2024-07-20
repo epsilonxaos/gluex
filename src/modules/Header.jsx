@@ -9,6 +9,7 @@ import iconLiquid1 from "../assets/img/menu/liquid1.svg";
 import iconLiquid2 from "../assets/img/menu/liquid2.svg";
 import iconProtocol1 from "../assets/img/menu/protocol1.svg";
 import iconProtocol2 from "../assets/img/menu/protocol2.svg";
+import { useClickAway } from "@uidotdev/usehooks";
 
 const containerVariants = {
 	hidden: { opacity: 0 },
@@ -30,8 +31,12 @@ export const Header = () => {
 
 	const handleToggle = () => setOpen(!open);
 
+	const ref = useClickAway(() => {
+		setOpen(false);
+	});
+
 	return (
-		<header className="absolute px-10 w-full z-50">
+		<header ref={ref} className="absolute px-10 w-full z-50">
 			<div className="max-w-app mx-auto">
 				<nav className="grid grid-cols-2 py-7 items-center">
 					<div className="col-span-1">
@@ -72,6 +77,10 @@ const Menu = ({ className = "" }) => {
 
 	const [open, setOpen] = useState(false);
 
+	const ref = useClickAway(() => {
+		setOpen(false);
+	});
+
 	return (
 		<motion.ul initial="hidden" animate="visible" exit="hidden" variants={containerVariants} className={className}>
 			<motion.li className="mb-4 md:mb-0 relative" variants={variantEscritorio} transition={{ duration: 0.3 }}>
@@ -80,7 +89,7 @@ const Menu = ({ className = "" }) => {
 				</button>
 
 				{open && (
-					<div className="md:absolute w-[220px] md:top-8 text-right md:text-left pt-2">
+					<div className="md:absolute w-[220px] md:top-8 text-right md:text-left pt-2" ref={ref}>
 						<h4 className="text-xs mb-2">For Liquidity Providers</h4>
 						<ul className="text-[10px] mb-2 pl-4">
 							<li className="mb-2 flex items-center justify-end md:justify-start">
