@@ -26,7 +26,7 @@ const SolutionsSection = () => {
 
 	return (
 		<div className="md:px-10">
-			<section className="w-full md:py-[60px] relative max-w-app mx-auto max-md:overflow-hidden">
+			<section className="w-full md:py-[60px] lg:py-[130px] relative max-w-app mx-auto max-md:overflow-hidden">
 				<Swiper
 					loop={true}
 					speed={1500}

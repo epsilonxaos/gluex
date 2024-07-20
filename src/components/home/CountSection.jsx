@@ -16,7 +16,7 @@ const CountSection = () => {
 	const swiperRef = useRef();
 
 	return (
-		<section className="w-full lg:w-[85%] mx-auto md:py-[60px]">
+		<section className="w-full lg:w-[85%] mx-auto md:py-[60px] lg:py-[130px]">
 			<p className="text-[20px] leading-[30px] md:text-[32px] w-full text-center md:mb-[8vh] px-4 mb-[80px]">
 				<span className="inline-flex">
 					The most{" "}

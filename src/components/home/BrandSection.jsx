@@ -2,7 +2,7 @@ import { InfiniteMovingCards } from "../animation/infinite-moving-cards";
 
 const BrandSection = () => {
 	return (
-		<section className="w-full lg:w-[85%] mx-auto md:py-[60px]">
+		<section className="w-full lg:w-[85%] mx-auto md:py-[60px] lg:py-[130px]">
 			<h3 className="font-auxMono text-[32px] md:text-[40px] text-center mb-3">
 				Gluing <span className="text-verde">DeFi</span>
 			</h3>

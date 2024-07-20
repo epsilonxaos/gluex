@@ -6,7 +6,7 @@ import iconZero from "../../assets/img/icon/icon-zero.svg";
 
 const LiquiditySection = () => {
 	return (
-		<section className="w-full lg:w-[85%] mx-auto py-[60px]">
+		<section className="w-full lg:w-[85%] mx-auto py-[60px] lg:py-[130px]">
 			<h3 className="font-auxMono text-[32px] md:text-[40px] text-center mb-3">
 				GlueX <span className="text-salmon">Liquidity</span> Modules
 			</h3>
