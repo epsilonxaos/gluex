@@ -4,25 +4,29 @@ import MainSection from "../components/home/MainSection";
 import SolutionsSection from "../components/home/SolutionsSection";
 import LiquiditySection from "../components/home/LiquiditySection";
 import BrandSection from "../components/home/BrandSection";
+import { BubblesAnimation } from "../components/animation/BubblesAnimation";
 
 export const Home = () => {
 	return (
-		<main className="relative z-10">
-			<MainSection />
+		<>
+			<BubblesAnimation className=" top-0 left-0 w-full h-svh">
+				<MainSection />
+			</BubblesAnimation>
+			<main className="relative z-10 bg-texture-etapa2">
+				<div className="max-w-app mx-auto px-10">
+					<CountSection />
 
-			<div className="max-w-app mx-auto px-10">
-				<CountSection />
+					<ProtocolSection />
+				</div>
 
-				<ProtocolSection />
-			</div>
+				<SolutionsSection />
 
-			<SolutionsSection />
+				<div className="max-w-app mx-auto px-10">
+					<LiquiditySection />
 
-			<div className="max-w-app mx-auto px-10">
-				<LiquiditySection />
-
-				<BrandSection />
-			</div>
-		</main>
+					<BrandSection />
+				</div>
+			</main>
+		</>
 	);
 };
