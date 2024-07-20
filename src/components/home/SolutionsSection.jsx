@@ -28,6 +28,7 @@ const SolutionsSection = () => {
 		<div className="md:px-10">
 			<section className="w-full md:py-[60px] relative max-w-app mx-auto max-md:overflow-hidden">
 				<Swiper
+					speed={1500}
 					onSwiper={(swiper) => {
 						ref.current = swiper;
 					}}

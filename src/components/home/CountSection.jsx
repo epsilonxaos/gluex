@@ -6,6 +6,7 @@ import AnimatedNumber from "../animation/AnimatedNumber";
 import "swiper/css/bundle";
 import { BiChevronRight } from "react-icons/bi";
 import { useRef, useState } from "react";
+import { Autoplay } from "swiper/modules";
 
 const words = ["flexible", "powerful", "all-round"];
 
@@ -60,6 +61,12 @@ const CountSection = () => {
 				</div>
 
 				<Swiper
+					modules={[Autoplay]}
+					speed={1500}
+					autoplay={{
+						delay: 9000,
+						disableOnInteraction: false,
+					}}
 					className="font-auxMono"
 					onSwiper={(swiper) => {
 						swiperRef.current = swiper;
