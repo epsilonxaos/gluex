@@ -6,7 +6,7 @@ import { XIcon } from "../icons";
 const MainSection = () => {
 	return (
 		<section className="bg-texture-etapa2-luces w-full relative z-10">
-			<div className="max-w-app mx-auto px-10">
+			<div className="max-w-app mx-auto px-10 min-h-svh flex items-center justify-center">
 				<div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-start  md:min-h-svh md:w-[90%] mx-auto md:pb-[60px] pt-[120px]">
 					<CustomAnimation className="col-span-1 mb-[40px] lg:mb-0" variant={V_FROM_LEFT_TO_ORIGIN}>
 						<h1 className="text-[40px] max-w-[265px] text-center md:text-[60px] lg:text-[96px] leading-none md:max-w-[430px] mx-auto">
