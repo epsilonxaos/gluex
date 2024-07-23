@@ -7,6 +7,8 @@ import "swiper/css/bundle";
 import { BiChevronRight } from "react-icons/bi";
 import { useRef, useState } from "react";
 import { Autoplay } from "swiper/modules";
+import CustomAnimation from "../animation/animation";
+import { V_FADE_IN_FROM_BOTTOM_TO_ORIGIN } from "../../constant/animationVariants";
 
 const words = ["flexible", "powerful", "all-round"];
 
@@ -17,37 +19,41 @@ const CountSection = () => {
 
 	return (
 		<section className="w-full lg:w-[85%] mx-auto md:py-[60px] lg:py-[130px]">
-			<p className="text-[20px] leading-[30px] md:text-[32px] w-full text-center md:mb-[8vh] px-4 mb-[80px]">
-				<span className="inline-flex">
-					The most{" "}
-					<span className="overflow-hidden">
-						<WordTransition words={words} based="&nbsp;all-round&nbsp;" />
+			<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN}>
+				<p className="text-[20px] leading-[30px] md:text-[32px] w-full text-center md:mb-[8vh] px-4 mb-[80px]">
+					<span className="inline-flex">
+						The most{" "}
+						<span className="overflow-hidden">
+							<WordTransition words={words} based="&nbsp;all-round&nbsp;" />
+						</span>{" "}
+						solve
 					</span>{" "}
-					solve
-				</span>{" "}
-				<br className="lg:hidden" />
-				computing protocol for DeFi.
-			</p>
+					<br className="lg:hidden" />
+					computing protocol for DeFi.
+				</p>
+			</CustomAnimation>
 
-			<ul className="py-14 rounded-2xl max-w-max px-12 text-center font-auxMono md:hidden w-[95%] mx-auto">
-				<li className="mb-[0px] md:mb-0">
-					<FlowValue />
-				</li>
-				<li className="py-4 md:hidden">
-					<div className="h-[40px] w-[1px] bg-white mx-auto" />
-				</li>
-				<li className="mb-[0px] md:mb-0">
-					<SettledValue />
-				</li>
-				<li className="py-4 md:hidden">
-					<div className="h-[40px] w-[1px] bg-white mx-auto" />
-				</li>
-				<li className="">
-					<SolvedValue />
-				</li>
-			</ul>
+			<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN}>
+				<ul className="py-14 rounded-2xl max-w-max px-12 text-center font-auxMono md:hidden w-[95%] mx-auto">
+					<li className="mb-[0px] md:mb-0">
+						<FlowValue />
+					</li>
+					<li className="py-4 md:hidden">
+						<div className="h-[40px] w-[1px] bg-white mx-auto" />
+					</li>
+					<li className="mb-[0px] md:mb-0">
+						<SettledValue />
+					</li>
+					<li className="py-4 md:hidden">
+						<div className="h-[40px] w-[1px] bg-white mx-auto" />
+					</li>
+					<li className="">
+						<SolvedValue />
+					</li>
+				</ul>
+			</CustomAnimation>
 
-			<div className="hidden md:block">
+			<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN} className="hidden md:block">
 				<div className="flex text-[24px] items-center justify-between mb-12">
 					<div className="flex items-center justify-start gap-2">
 						<div className="size-[65px] flex items-center justify-center rounded-full border text-verde">0{swiperIndex}</div>
@@ -87,7 +93,7 @@ const CountSection = () => {
 						<SettledValue />
 					</SwiperSlide>
 				</Swiper>
-			</div>
+			</CustomAnimation>
 		</section>
 	);
 };

@@ -19,6 +19,8 @@ import iconSolveList3 from "../../assets/img/icon/solve/3.svg";
 import iconBuildList1 from "../../assets/img/icon/build/1.svg";
 import iconBuildList2 from "../../assets/img/icon/build/2.svg";
 import iconBuildList3 from "../../assets/img/icon/build/3.svg";
+import CustomAnimation from "../animation/animation";
+import { V_FADE_IN_FROM_BOTTOM_TO_ORIGIN } from "../../constant/animationVariants";
 
 const SolutionsSection = () => {
 	const ref = useRef(null);
@@ -27,91 +29,93 @@ const SolutionsSection = () => {
 	return (
 		<div className="md:px-10">
 			<section className="w-full md:py-[60px] lg:py-[130px] relative max-w-app mx-auto max-md:overflow-hidden">
-				<Swiper
-					loop={true}
-					speed={1500}
-					onSwiper={(swiper) => {
-						ref.current = swiper;
-					}}
-					onSlideChange={(s) => setIndex(s.activeIndex)}
-					spaceBetween={50}
-				>
-					<SwiperSlide>
-						<SolutionCard
-							mainColor="text-verde"
-							icon={iconEarn}
-							title={"Earn"}
-							desc={"Via revenue-share among users, liquidity providers, solvers and contributors"}
-							list={[
-								{
-									icon: iconEarnList1,
-									text: "MEV protected by default",
-								},
-								{
-									icon: iconEarnList2,
-									text: "Better yield for liquidity providers",
-								},
-								{
-									icon: iconEarnList3,
-									text: "Best execution for users",
-								},
-							]}
-						/>
-					</SwiperSlide>
-					<SwiperSlide>
-						<SolutionCard
-							mainColor="text-salmon"
-							icon={iconSolve}
-							title={"Solve"}
-							desc={"With GlueX SDK"}
-							list={[
-								{
-									icon: iconSolveList1,
-									text: "No collateral requirements",
-								},
-								{
-									icon: iconSolveList2,
-									text: "Fastest onboarding",
-								},
-								{
-									icon: iconSolveList3,
-									text: "Zero-risk solving",
-								},
-							]}
-						/>
-					</SwiperSlide>
-					<SwiperSlide>
-						<SolutionCard
-							mainColor="text-verde"
-							icon={iconBuild}
-							title={"Build"}
-							desc={"With GlueX Protocol"}
-							list={[
-								{
-									icon: iconBuildList1,
-									text: "Simple",
-								},
-								{
-									icon: iconBuildList2,
-									text: "Upgradeable",
-								},
-								{
-									icon: iconBuildList3,
-									text: "Ownable",
-								},
-							]}
-						/>
-					</SwiperSlide>
-				</Swiper>
+				<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN}>
+					<Swiper
+						loop={true}
+						speed={1500}
+						onSwiper={(swiper) => {
+							ref.current = swiper;
+						}}
+						onSlideChange={(s) => setIndex(s.activeIndex)}
+						spaceBetween={50}
+					>
+						<SwiperSlide>
+							<SolutionCard
+								mainColor="text-verde"
+								icon={iconEarn}
+								title={"Earn"}
+								desc={"Via revenue-share among users, liquidity providers, solvers and contributors"}
+								list={[
+									{
+										icon: iconEarnList1,
+										text: "MEV protected by default",
+									},
+									{
+										icon: iconEarnList2,
+										text: "Better yield for liquidity providers",
+									},
+									{
+										icon: iconEarnList3,
+										text: "Best execution for users",
+									},
+								]}
+							/>
+						</SwiperSlide>
+						<SwiperSlide>
+							<SolutionCard
+								mainColor="text-salmon"
+								icon={iconSolve}
+								title={"Solve"}
+								desc={"With GlueX SDK"}
+								list={[
+									{
+										icon: iconSolveList1,
+										text: "No collateral requirements",
+									},
+									{
+										icon: iconSolveList2,
+										text: "Fastest onboarding",
+									},
+									{
+										icon: iconSolveList3,
+										text: "Zero-risk solving",
+									},
+								]}
+							/>
+						</SwiperSlide>
+						<SwiperSlide>
+							<SolutionCard
+								mainColor="text-verde"
+								icon={iconBuild}
+								title={"Build"}
+								desc={"With GlueX Protocol"}
+								list={[
+									{
+										icon: iconBuildList1,
+										text: "Simple",
+									},
+									{
+										icon: iconBuildList2,
+										text: "Upgradeable",
+									},
+									{
+										icon: iconBuildList3,
+										text: "Ownable",
+									},
+								]}
+							/>
+						</SwiperSlide>
+					</Swiper>
 
-				<div className="max-md:absolute bottom-2 z-10 flex w-full items-center justify-center gap-4">
-					<button className={`md:absolute transition-colors size-[30px] ${index % 2 == 0 ? "bg-verde" : "bg-salmon"} flex items-center justify-center z-10 rounded-full md:top-1/2 md:-translate-y-1/2 md:left-[-15px]`} onClick={() => ref.current.slidePrev()} type="button">
-						<GoChevronLeft className="text-black" size={20} />
-					</button>
-					<button className={`md:absolute transition-colors size-[30px] ${index % 2 == 0 ? "bg-verde" : "bg-salmon"} flex items-center justify-center z-10 rounded-full md:top-1/2 md:-translate-y-1/2 md:right-[-15px]`} onClick={() => ref.current.slideNext()} type="button">
-						<GoChevronRight className="text-black" size={20} />
-					</button>
-				</div>
+					<div className="max-md:absolute bottom-2 z-10 flex w-full items-center justify-center gap-4">
+						<button className={`md:absolute transition-colors size-[30px] ${index % 2 == 0 ? "bg-verde" : "bg-salmon"} flex items-center justify-center z-10 rounded-full md:top-1/2 md:-translate-y-1/2 md:left-[-15px]`} onClick={() => ref.current.slidePrev()} type="button">
+							<GoChevronLeft className="text-black" size={20} />
+						</button>
+						<button className={`md:absolute transition-colors size-[30px] ${index % 2 == 0 ? "bg-verde" : "bg-salmon"} flex items-center justify-center z-10 rounded-full md:top-1/2 md:-translate-y-1/2 md:right-[-15px]`} onClick={() => ref.current.slideNext()} type="button">
+							<GoChevronRight className="text-black" size={20} />
+						</button>
+					</div>
+				</CustomAnimation>
 			</section>
 		</div>
 	);
