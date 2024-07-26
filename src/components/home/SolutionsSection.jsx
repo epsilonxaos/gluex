@@ -21,6 +21,7 @@ import iconBuildList2 from "../../assets/img/icon/build/2.svg";
 import iconBuildList3 from "../../assets/img/icon/build/3.svg";
 import CustomAnimation from "../animation/animation";
 import { V_FADE_IN_FROM_BOTTOM_TO_ORIGIN } from "../../constant/animationVariants";
+import { IconViewMore } from "../icons";
 
 const SolutionsSection = () => {
 	const ref = useRef(null);
@@ -42,6 +43,7 @@ const SolutionsSection = () => {
 						<SwiperSlide>
 							<SolutionCard
 								mainColor="text-verde"
+								iconColor="fill-verde"
 								icon={iconEarn}
 								title={"Earn"}
 								desc={"Via revenue-share among users, liquidity providers, solvers and contributors"}
@@ -64,6 +66,7 @@ const SolutionsSection = () => {
 						<SwiperSlide>
 							<SolutionCard
 								mainColor="text-salmon"
+								iconColor="fill-salmon"
 								icon={iconSolve}
 								title={"Solve"}
 								desc={"With GlueX SDK"}
@@ -86,6 +89,7 @@ const SolutionsSection = () => {
 						<SwiperSlide>
 							<SolutionCard
 								mainColor="text-verde"
+								iconColor="fill-verde"
 								icon={iconBuild}
 								title={"Build"}
 								desc={"With GlueX Protocol"}
@@ -107,7 +111,7 @@ const SolutionsSection = () => {
 						</SwiperSlide>
 					</Swiper>
 
-					<div className="max-md:absolute bottom-2 z-10 flex w-full items-center justify-center gap-4">
+					<div className="max-md:absolute bottom-8 z-10 flex w-full items-center justify-center gap-4">
 						<button className={`md:absolute transition-colors size-[30px] ${index % 2 == 0 ? "bg-verde" : "bg-salmon"} flex items-center justify-center z-10 rounded-full md:top-1/2 md:-translate-y-1/2 md:left-[-15px]`} onClick={() => ref.current.slidePrev()} type="button">
 							<GoChevronLeft className="text-black" size={20} />
 						</button>
@@ -121,10 +125,10 @@ const SolutionsSection = () => {
 	);
 };
 
-const SolutionCard = ({ mainColor = "text-verde", icon, title, desc, list = [{ icon: "", text: "" }], link = "" }) => {
+const SolutionCard = ({ mainColor = "text-verde", iconColor, icon, title, desc, list = [{ icon: "", text: "" }], link = "" }) => {
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-2 items-center bg-[#151515B2] md:rounded-[30px] md:pt-[10px] md:pb-[60px] px-10 lg:px-20">
-			<div className="col-span-1 order-2 md:order-1 py-12 pb-14 max-md:min-h-[400px]">
+			<div className="col-span-1 order-2 md:order-1 py-12 max-md:pb-[85px] max-md:min-h-[400px]">
 				<div className="w-full mx-auto max-w-[440px] text-center md:text-left">
 					<Text className={twMerge("font-auxMono !text-[40px] mb-4", mainColor)}>{title}</Text>
 					<Text className={"mb-8 md:mb-12"}>{desc}</Text>
@@ -139,7 +143,9 @@ const SolutionCard = ({ mainColor = "text-verde", icon, title, desc, list = [{ i
 					</ul>
 
 					<a href={link} target="_blank" rel="noopener noreferrer">
-						<Text className={twMerge("font-auxMono !text-[14px]", mainColor)}>Learn more</Text>
+						<Text className={twMerge("font-auxMono !text-[14px]", mainColor)}>
+							Learn more <IconViewMore className={iconColor} />
+						</Text>
 					</a>
 				</div>
 			</div>
