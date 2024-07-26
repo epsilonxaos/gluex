@@ -19,7 +19,7 @@ const LiquiditySection = () => {
 					GlueX <span className="text-salmon">Liquidity</span> Modules
 				</h3>
 
-				<Text className={"max-w-[750px] mx-auto md:text-xl lg:text-2xl text-center mb-[80px]"}>Get rebates, generate yield from non-toxic order flow and reduce your LVR by offering liquidity on GlueX Liquidity Pools or GlueX Limit Order Book</Text>
+				<Text className={"max-w-[750px] mx-auto md:text-xl lg:text-2xl text-center mb-[40px] md:mb-[80px]"}>Get rebates, generate yield from non-toxic order flow and reduce your LVR by offering liquidity on GlueX Liquidity Pools or GlueX Limit Order Book</Text>
 			</CustomAnimation>
 
 			<motion.ul ref={ref} variants={V_STAGGER_CONTAINER} initial={"initial"} animate={isInView ? "show" : "initial"} className="md:flex md:items-start md:justify-between text-center md:text-left">

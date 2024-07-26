@@ -19,7 +19,7 @@ const ProtocolSection = () => {
 					<span className="text-salmon">GlueX</span> Protocol
 				</h3>
 
-				<Text className={"max-w-[750px] mx-auto md:text-xl lg:text-2xl text-center mb-[80px]"}>A solving framework that abstracts away the differences among blockchains, intents, originators and liquidity providers.</Text>
+				<Text className={"max-w-[750px] mx-auto md:text-xl lg:text-2xl text-center mb-[40px] md:mb-[80px]"}>A solving framework that abstracts away the differences among blockchains, intents, originators and liquidity providers.</Text>
 			</CustomAnimation>
 
 			<motion.ul ref={ref} variants={V_STAGGER_CONTAINER} initial={"initial"} animate={isInView ? "show" : "initial"} className="md:flex md:items-start md:justify-between text-center md:text-left">
