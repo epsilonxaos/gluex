@@ -80,7 +80,6 @@ const CountSection = () => {
 					}}
 					onSlideChange={(s) => {
 						setSwiperIndex(s.realIndex + 1);
-						console.log(s);
 					}}
 				>
 					<SwiperSlide>
