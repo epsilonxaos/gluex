@@ -29,8 +29,9 @@ html {
 	/* background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(/src/assets/img/textura-luces.jpg); */
 	/* background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(/src/assets/img/textura-calada.png); */
 	background-image: url(/src/assets/img/textura-calada.png);
-	background-color: rgba(0, 0, 0, 0.65);
-	background-blend-mode: darken;
+	background-image: url(/src/assets/img/textura-calada2.png);
+	/* background-color: rgba(0, 0, 0, 0.65); */
+	/* background-blend-mode: darken; */
 }
 .bg-texture-etapa2 {
 	@apply bg-center bg-repeat-y;

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import logo from "../assets/img/logo.svg";
 import Links from "../components/Links";
 import { AnimatePresence, motion } from "framer-motion";

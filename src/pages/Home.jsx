@@ -9,10 +9,9 @@ import { BubblesAnimation } from "../components/animation/BubblesAnimation";
 export const Home = () => {
 	return (
 		<>
-			<BubblesAnimation className=" top-0 left-0 w-full h-svh">
-				<MainSection />
-			</BubblesAnimation>
-			<main className="relative z-10 bg-texture-etapa2">
+			<BubblesAnimation className=" top-0 left-0 w-full h-svh" />
+			<MainSection />
+			<main className="relative z-10 ">
 				<div className="max-w-app mx-auto px-10">
 					<CountSection />
 
