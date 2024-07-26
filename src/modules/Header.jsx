@@ -26,6 +26,11 @@ const variantEscritorio = {
 	visible: { opacity: 1, y: 0 },
 };
 
+const variantsubMenu = {
+	hidden: { opacity: 0, x: -10 },
+	visible: { opacity: 1, x: 0 },
+};
+
 export const Header = () => {
 	const [open, setOpen] = useState(false);
 
@@ -94,9 +99,11 @@ const Menu = ({ className = "" }) => {
 				</button>
 
 				{hovering && (
-					<div className="md:absolute w-[220px] md:top-full pt-4 text-right md:text-left">
-						<h4 className="text-xs mb-2">For Liquidity Providers</h4>
-						<ul className="text-[10px] mb-2 pl-4">
+					<motion.div className="md:absolute w-[220px] md:top-full pt-4 text-right md:text-left" initial="hidden" animate="visible" exit="hidden" variants={containerVariants}>
+						<motion.h4 className="text-xs mb-2" variants={variantsubMenu}>
+							For Liquidity Providers
+						</motion.h4>
+						<motion.ul className="text-[10px] mb-2 pl-4" variants={variantsubMenu}>
 							<li className="mb-2 flex items-center justify-end md:justify-start">
 								<img className="size-[13px] mr-2" src={iconLiquid1} alt="" />
 								GlueX Liquidity Pools
@@ -104,17 +111,19 @@ const Menu = ({ className = "" }) => {
 							<li className="flex items-center justify-end md:justify-start">
 								<img className="size-[13px] mr-2" src={iconLiquid2} alt="" /> GlueX Limit Order Book
 							</li>
-						</ul>
-						<h4 className="text-xs mb-2">For Protocols and dApps</h4>
-						<ul className="text-[10px] pl-4">
+						</motion.ul>
+						<motion.h4 className="text-xs mb-2" variants={variantsubMenu}>
+							For Protocols and dApps
+						</motion.h4>
+						<motion.ul className="text-[10px] pl-4" variants={variantsubMenu}>
 							<li className="mb-2 flex items-center justify-end md:justify-start">
 								<img className="size-[13px] mr-2" src={iconProtocol1} alt="" /> GlueX SDK
 							</li>
 							<li className="flex items-center justify-end md:justify-start">
 								<img className="size-[13px] mr-2" src={iconProtocol2} alt="" /> GlueX Hooks
 							</li>
-						</ul>
-					</div>
+						</motion.ul>
+					</motion.div>
 				)}
 			</motion.li>
 			<motion.li className="mb-4 md:mb-0" variants={variantEscritorio} transition={{ duration: 0.3 }}>
