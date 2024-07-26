@@ -104,12 +104,16 @@ const Menu = ({ className = "" }) => {
 							For Liquidity Providers
 						</motion.h4>
 						<motion.ul className="text-[10px] mb-2 pl-4" variants={variantsubMenu}>
-							<li className="mb-2 flex items-center justify-end md:justify-start">
-								<img className="size-[13px] mr-2" src={iconLiquid1} alt="" />
-								GlueX Liquidity Pools
+							<li className="mb-2">
+								<Links className={"flex items-center justify-end md:justify-start"} url={""}>
+									<img className="size-[13px] mr-2" src={iconLiquid1} alt="" />
+									GlueX Liquidity Pools
+								</Links>
 							</li>
 							<li className="flex items-center justify-end md:justify-start">
-								<img className="size-[13px] mr-2" src={iconLiquid2} alt="" /> GlueX Limit Order Book
+								<Links className={"flex items-center justify-end md:justify-start"} url={""}>
+									<img className="size-[13px] mr-2" src={iconLiquid2} alt="" /> GlueX Limit Order Book
+								</Links>
 							</li>
 						</motion.ul>
 						<motion.h4 className="text-xs mb-2" variants={variantsubMenu}>
@@ -117,10 +121,14 @@ const Menu = ({ className = "" }) => {
 						</motion.h4>
 						<motion.ul className="text-[10px] pl-4" variants={variantsubMenu}>
 							<li className="mb-2 flex items-center justify-end md:justify-start">
-								<img className="size-[13px] mr-2" src={iconProtocol1} alt="" /> GlueX SDK
+								<Links className={"flex items-center justify-end md:justify-start"} url={""}>
+									<img className="size-[13px] mr-2" src={iconProtocol1} alt="" /> GlueX SDK
+								</Links>
 							</li>
 							<li className="flex items-center justify-end md:justify-start">
-								<img className="size-[13px] mr-2" src={iconProtocol2} alt="" /> GlueX Hooks
+								<Links className={"flex items-center justify-end md:justify-start"} url={""}>
+									<img className="size-[13px] mr-2" src={iconProtocol2} alt="" /> GlueX Hooks
+								</Links>
 							</li>
 						</motion.ul>
 					</motion.div>
