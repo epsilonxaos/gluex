@@ -9,7 +9,7 @@ import iconLiquid1 from "../assets/img/menu/liquid1.svg";
 import iconLiquid2 from "../assets/img/menu/liquid2.svg";
 import iconProtocol1 from "../assets/img/menu/protocol1.svg";
 import iconProtocol2 from "../assets/img/menu/protocol2.svg";
-import { useClickAway } from "@uidotdev/usehooks";
+import { useClickAway, useHover } from "@uidotdev/usehooks";
 
 const containerVariants = {
 	hidden: { opacity: 0 },
@@ -35,10 +35,10 @@ export const Header = () => {
 		setOpen(false);
 	});
 
-	useEffect(() => {
-		if (open) document.querySelector("body").classList.add("overflow-hidden");
-		else document.querySelector("body").classList.remove("overflow-hidden");
-	}, [open]);
+	// useEffect(() => {
+	// 	if (open) document.querySelector("body").classList.add("overflow-hidden");
+	// 	else document.querySelector("body").classList.remove("overflow-hidden");
+	// }, [open]);
 
 	return (
 		<>
@@ -84,21 +84,17 @@ export const Header = () => {
 const Menu = ({ className = "" }) => {
 	const { dispatch } = useContext(AppContext);
 
-	const [open, setOpen] = useState(false);
-
-	const ref = useClickAway(() => {
-		setOpen(false);
-	});
+	const [ref, hovering] = useHover();
 
 	return (
 		<motion.ul initial="hidden" animate="visible" exit="hidden" variants={containerVariants} className={className}>
-			<motion.li className="mb-4 md:mb-0 relative" variants={variantEscritorio} transition={{ duration: 0.3 }}>
-				<button onClick={() => setOpen(!open)} className={`text-white  ${open ? "hover:text-salmon !text-salmon" : "hover:text-verde"}`} type="button">
+			<motion.li className="mb-4 md:mb-0 relative" variants={variantEscritorio} transition={{ duration: 0.3 }} ref={ref}>
+				<button className={`text-white  ${hovering ? "hover:text-verde !text-verde" : ""}`} type="button">
 					Product
 				</button>
 
-				{open && (
-					<div className="md:absolute w-[220px] md:top-8 text-right md:text-left pt-2" ref={ref}>
+				{hovering && (
+					<div className="md:absolute w-[220px] md:top-full pt-4 text-right md:text-left">
 						<h4 className="text-xs mb-2">For Liquidity Providers</h4>
 						<ul className="text-[10px] mb-2 pl-4">
 							<li className="mb-2 flex items-center justify-end md:justify-start">
