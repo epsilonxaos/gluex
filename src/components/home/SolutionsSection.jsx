@@ -128,7 +128,7 @@ const SolutionsSection = () => {
 const SolutionCard = ({ mainColor = "text-verde", iconColor, icon, title, desc, list = [{ icon: "", text: "" }], link = "" }) => {
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-2 items-center bg-[#151515B2] md:rounded-[30px] md:pt-[10px] md:pb-[60px] px-10 lg:px-20">
-			<div className="col-span-1 order-2 md:order-1 py-12 max-md:pb-[85px] max-md:min-h-[400px]">
+			<div className="col-span-1 order-2 md:order-1 py-12 max-md:pb-[85px] max-md:min-h-[430px]">
 				<div className="w-full mx-auto max-w-[440px] text-center md:text-left">
 					<Text className={twMerge("font-auxMono !text-[40px] mb-4", mainColor)}>{title}</Text>
 					<Text className={"mb-8 md:mb-12"}>{desc}</Text>
