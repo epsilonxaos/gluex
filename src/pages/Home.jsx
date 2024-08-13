@@ -13,18 +13,16 @@ export const Home = () => {
 			<MainSection />
 			<main className="relative z-10 ">
 				<div className="max-w-app mx-auto px-10">
-					<CountSection />
-
-					<ProtocolSection />
+					<BrandSection />
 				</div>
 
 				<SolutionsSection />
 
 				<div className="max-w-app mx-auto px-10">
-					<LiquiditySection />
-
-					<BrandSection />
+					<CountSection />
+					<ProtocolSection />
 				</div>
+				<LiquiditySection />
 			</main>
 		</>
 	);

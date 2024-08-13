@@ -6,6 +6,8 @@ import { Home } from "./pages/Home";
 import AppContext from "./context/AppContext";
 import { useReducer } from "react";
 
+import "./css/button.css";
+
 const initialArgs = {
 	openModalContact: false,
 };

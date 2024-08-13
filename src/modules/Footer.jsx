@@ -26,9 +26,6 @@ export const Footer = () => {
 				<nav className="py-10 md:hidden">
 					<div className="flex items-center justify-center mb-7 gap-8">
 						<SocialMedia />
-						{/* <Links className={"flex items-center"}>
-							<FaTelegram size={iconSize} className="inline-block mr-2" /> 000 000 0000
-						</Links> */}
 						<NavFooter />
 					</div>
 
@@ -44,21 +41,21 @@ export const Footer = () => {
 const SocialMedia = () => {
 	return (
 		<ul className="grid grid-cols-2 max-w-max gap-2 md:mr-6">
-			{/* <li className="col-span-1">
+			<li className="col-span-1">
 				<Links url={"https://www.linkedin.com/company/gluex-protocol/"}>
 					<FaLinkedin size={iconSize} />
 				</Links>
-			</li> */}
+			</li>
 			<li className="col-span-1">
 				<Links url={"https://x.com/GluexProtocol"}>
 					<FaXTwitter size={iconSize} />
 				</Links>
 			</li>
-			<li className="col-span-1">
+			{/* <li className="col-span-1">
 				<Links className={"flex items-center"} url={"https://t.me/+yf_US2ACNrgyNzY0"}>
 					<FaTelegram size={iconSize} />
 				</Links>
-			</li>
+			</li> */}
 			{/* <li className="col-span-1">
 				<Links>
 					<FaDiscord size={iconSize} />

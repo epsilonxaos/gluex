@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import logo from "../assets/img/logo.svg";
 import Links from "../components/Links";
 import { AnimatePresence, motion } from "framer-motion";
@@ -10,6 +10,7 @@ import iconLiquid2 from "../assets/img/menu/liquid2.svg";
 import iconProtocol1 from "../assets/img/menu/protocol1.svg";
 import iconProtocol2 from "../assets/img/menu/protocol2.svg";
 import { useClickAway, useHover } from "@uidotdev/usehooks";
+import { FaAngleDown } from "react-icons/fa6";
 
 const containerVariants = {
 	hidden: { opacity: 0 },
@@ -55,15 +56,16 @@ export const Header = () => {
 						</div>
 						<div className="col-span-1 flex items-center justify-end">
 							<AnimatePresence>
-								{open && (
-									<nav className="mr-12">
-										<Menu className="hidden items-center justify-end gap-12 text-xs font-auxMono md:flex" />
-										<Menu className="absolute top-full text-right right-10 text-xs font-auxMono md:hidden" />
-									</nav>
-								)}
+								<nav className="mr-12 md:m-0">
+									{/* // * Escritorio */}
+									<Menu className="hidden items-center justify-end gap-12 text-xs font-auxMono md:flex" />
+
+									{/* // * Movil */}
+									{open && <Menu className="fixed top-[80px] h-[80%] left-10 w-full text-xs font-auxMono md:hidden" />}
+								</nav>
 							</AnimatePresence>
 
-							<button type="button" className="h-[30px] w-[30px] flex items-center justify-center" onClick={handleToggle}>
+							<button type="button" className="h-[30px] w-[30px] md:hidden flex items-center justify-center" onClick={handleToggle}>
 								{!open ? (
 									<svg className="w-[30px] scale-[.65] block cursor-pointer" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 89.1 68.8" xmlSpace="preserve">
 										<g>
@@ -81,7 +83,7 @@ export const Header = () => {
 				</div>
 			</header>
 
-			{open && <div className="bg-black lg:hidden bg-opacity-70 backdrop-blur-sm absolute top-0 left-0 w-full h-svh z-20"></div>}
+			{open && <div className="bg-black lg:hidden bg-opacity-95 backdrop-blur-sm absolute top-0 left-0 w-full h-svh z-20"></div>}
 		</>
 	);
 };
@@ -90,60 +92,65 @@ const Menu = ({ className = "" }) => {
 	const { dispatch } = useContext(AppContext);
 
 	const [ref, hovering] = useHover();
+	const [open, setOpen] = useState();
+
+	useEffect(() => setOpen(hovering), [hovering]);
 
 	return (
 		<motion.ul initial="hidden" animate="visible" exit="hidden" variants={containerVariants} className={className}>
-			<motion.li className="mb-4 md:mb-0 relative" variants={variantEscritorio} transition={{ duration: 0.3 }} ref={ref}>
-				<button className={`text-white  ${hovering ? "hover:text-verde !text-verde" : ""}`} type="button">
-					Product
+			<motion.li className="mb-4 max-w-max md:mb-0 relative" variants={variantEscritorio} transition={{ duration: 0.3 }} ref={ref}>
+				<button className={`text-white md:flex md:items-center md:gap-1  ${open ? "hover:text-verde !text-verde" : ""}`} type="button">
+					Product <FaAngleDown className="inline-block ml-1" />
 				</button>
 
-				{hovering && (
-					<motion.div className="md:absolute w-[220px] md:top-full pt-4 text-right md:text-left" initial="hidden" animate="visible" exit="hidden" variants={containerVariants}>
-						<motion.h4 className="text-xs mb-2" variants={variantsubMenu}>
-							For Liquidity Providers
-						</motion.h4>
-						<motion.ul className="text-[10px] mb-2 pl-4" variants={variantsubMenu}>
-							<li className="mb-2">
-								<Links className={"flex items-center justify-end md:justify-start"} url={""}>
-									<img className="size-[13px] mr-2" src={iconLiquid1} alt="" />
-									GlueX Liquidity Pools
-								</Links>
-							</li>
-							<li className="flex items-center justify-end md:justify-start">
-								<Links className={"flex items-center justify-end md:justify-start"} url={""}>
-									<img className="size-[13px] mr-2" src={iconLiquid2} alt="" /> GlueX Limit Order Book
-								</Links>
-							</li>
-						</motion.ul>
-						<motion.h4 className="text-xs mb-2" variants={variantsubMenu}>
-							For Protocols and dApps
-						</motion.h4>
-						<motion.ul className="text-[10px] pl-4" variants={variantsubMenu}>
-							<li className="mb-2 flex items-center justify-end md:justify-start">
-								<Links className={"flex items-center justify-end md:justify-start"} url={""}>
-									<img className="size-[13px] mr-2" src={iconProtocol1} alt="" /> GlueX SDK
-								</Links>
-							</li>
-							<li className="flex items-center justify-end md:justify-start">
-								<Links className={"flex items-center justify-end md:justify-start"} url={""}>
-									<img className="size-[13px] mr-2" src={iconProtocol2} alt="" /> GlueX Hooks
-								</Links>
-							</li>
-						</motion.ul>
+				{open && (
+					<motion.div className="md:absolute w-[330px] md:top-full pt-4" initial="hidden" animate="visible" exit="hidden" variants={containerVariants}>
+						<div className="md:bg-[#151515B2] md:rounded-[30px] md:p-8">
+							<motion.h4 className="text-xs mb-3" variants={variantsubMenu}>
+								For Liquidity Providers
+							</motion.h4>
+							<motion.ul className="text-[10px] mb-6 pl-4 md:pl-0" variants={variantsubMenu}>
+								<li className="mb-3">
+									<Links className={"flex items-center justify-start"} url={""}>
+										<img className="size-[16px] mr-2" src={iconLiquid2} alt="" /> GlueX Limit Order Book
+									</Links>
+								</li>
+								<li>
+									<Links className={"flex items-center justify-start"} url={""}>
+										<img className="size-[16px] mr-2" src={iconLiquid1} alt="" />
+										GlueX Liquidity Pools
+									</Links>
+								</li>
+							</motion.ul>
+							<motion.h4 className="text-xs mb-3" variants={variantsubMenu}>
+								For Protocols and dApps
+							</motion.h4>
+							<motion.ul className="text-[10px] pl-4 md:pl-0" variants={variantsubMenu}>
+								<li className="mb-3">
+									<Links className={"flex items-center justify-start"} url={""}>
+										<img className="size-[16px] mr-2" src={iconProtocol1} alt="" /> GlueX SDK
+									</Links>
+								</li>
+								<li>
+									<Links className={"flex items-center justify-start"} url={""}>
+										<img className="size-[16px] mr-2" src={iconProtocol2} alt="" /> GlueX Hooks
+									</Links>
+								</li>
+							</motion.ul>
+						</div>
 					</motion.div>
 				)}
 			</motion.li>
-			<motion.li className="mb-4 md:mb-0" variants={variantEscritorio} transition={{ duration: 0.3 }}>
+			<motion.li className={`mb-4 max-w-max md:mb-0 transition-opacity ${open ? "max-md:!opacity-40 pointer-events-none cursor-auto" : ""}`} variants={variantEscritorio} transition={{ duration: 0.3 }}>
 				<Links url={"https://mirror.xyz/gluex.eth"}>Whitepaper</Links>
 			</motion.li>
-			<motion.li className="mb-4 md:mb-0" variants={variantEscritorio} transition={{ duration: 0.3 }}>
+			<motion.li className={`mb-4 max-w-max md:mb-0 transition-opacity ${open ? "max-md:!opacity-40 pointer-events-none cursor-auto" : ""}`} variants={variantEscritorio} transition={{ duration: 0.3 }}>
 				<Links url={"https://mirror.xyz/gluex.eth"}>Jobs</Links>
 			</motion.li>
-			<motion.li className="mb-4 md:mb-0" variants={variantEscritorio} transition={{ duration: 0.3 }}>
+			<motion.li className={`mb-4 max-w-max md:mb-0 transition-opacity ${open ? "max-md:!opacity-40 pointer-events-none cursor-auto" : ""}`} variants={variantEscritorio} transition={{ duration: 0.3 }}>
 				<Links url={"https://mirror.xyz/gluex.eth"}>Blog</Links>
 			</motion.li>
-			<motion.li variants={variantEscritorio} transition={{ duration: 0.3 }}>
+			<motion.li className={`max-w-max transition-opacity ${open ? "max-md:!opacity-40 pointer-events-none cursor-auto" : ""}`} variants={variantEscritorio} transition={{ duration: 0.3 }}>
 				<button className="text-white hover:text-verde" type="button" onClick={() => dispatch({ openModalContact: true })}>
 					Integrate
 				</button>
