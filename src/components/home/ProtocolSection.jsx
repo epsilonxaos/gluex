@@ -43,7 +43,7 @@ const ProtocolSection = () => {
 const LiProtocol = ({ icon, title, text }) => {
 	return (
 		<motion.li variants={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN2} transition={{ duration: 0.3 }} className="col-span-1 max-md:mx-auto max-w-[350px] mb-10 md:mb-0">
-			<div className="bg-[#151515B2] max-md:py-10 p-[25px] xl:p-[50px] rounded-[30px] h-full">
+			<div className="bg-neutral-900 bg-opacity-90 backdrop-blur-sm max-md:py-10 p-[25px] xl:p-[50px] rounded-[30px] h-full">
 				<img src={icon} className="w-auto mx-auto md:ml-0 h-[50px] mb-9 md:mb-4" alt="Icon flexible" />
 				<Text className={"font-auxMono uppercase"}>{title}</Text>
 				<Text>{text}</Text>

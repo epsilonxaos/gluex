@@ -28,7 +28,7 @@ const BrandSection = () => {
 				<p className="mb-8 w-[230px] mx-auto md:w-full md:font-auxMono text-sm text-center">GlueX pulls together the capabilities of all DeFi protocols</p>
 			</CustomAnimation> */}
 
-			<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN} className="pb-[60px]">
+			<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN} className="pb-[60px] hidden md:block">
 				<InfiniteMovingCards className="mx-auto w-[100%]" items={[...brands1, ...brands2]} direction="right" speed="slow" />
 				{/* <InfiniteMovingCards className="mx-auto w-[90%]" items={brands2} direction="left" speed="slow" /> */}
 			</CustomAnimation>

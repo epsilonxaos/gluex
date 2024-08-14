@@ -48,8 +48,9 @@ export const Header = () => {
 
 	return (
 		<>
-			<header ref={ref} className="absolute px-10 w-full z-50">
-				<div className="max-w-app mx-auto">
+			<header ref={ref} className="fixed px-10 w-full z-50">
+				<div className="absolute bg-black bg-opacity-95 backdrop-blur-sm top-0 left-0 w-full h-full"></div>
+				<div className="max-w-app mx-auto relative z-10">
 					<nav className="grid grid-cols-2 py-7 items-center">
 						<div className="col-span-1">
 							<img src={logo} className="w-[95px]" alt="Glue X" />
@@ -83,7 +84,7 @@ export const Header = () => {
 				</div>
 			</header>
 
-			{open && <div className="bg-black lg:hidden bg-opacity-95 backdrop-blur-sm absolute top-0 left-0 w-full h-svh z-20"></div>}
+			{open && <div className="bg-black lg:hidden bg-opacity-95 backdrop-blur-sm fixed top-0 left-0 w-full h-svh z-20"></div>}
 		</>
 	);
 };
@@ -104,8 +105,8 @@ const Menu = ({ className = "" }) => {
 				</button>
 
 				{open && (
-					<motion.div className="md:absolute w-[330px] md:top-full pt-4" initial="hidden" animate="visible" exit="hidden" variants={containerVariants}>
-						<div className="md:bg-[#151515B2] md:rounded-[30px] md:p-8">
+					<motion.div className="md:absolute w-[330px] md:top-full pt-[28px]" initial="hidden" animate="visible" exit="hidden" variants={containerVariants}>
+						<div className="md:bg-neutral-900 md:bg-opacity-95 md:backdrop-blur-sm md:rounded-[30px] md:rounded-tl-none md:p-8">
 							<motion.h4 className="text-xs mb-3" variants={variantsubMenu}>
 								For Liquidity Providers
 							</motion.h4>

@@ -15,7 +15,7 @@ const LiquiditySection = () => {
 	return (
 		<div className="md:px-10">
 			<section className="w-full pt-[30px] pb-[60px] md:py-[60px] lg:py-[90px] relative max-w-app mx-auto max-md:overflow-hidden">
-				<div className="bg-[#151515B2] md:rounded-[30px] py-12 md:py-20 px-10 lg:px-20">
+				<div className="bg-neutral-900 bg-opacity-90 backdrop-blur-sm md:rounded-[30px] py-12 md:py-20 px-10 lg:px-20">
 					<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN}>
 						<h3 className="font-auxMono text-[32px] md:text-[40px] text-center mb-3">
 							GlueX <span className="text-verde">Liquidity</span> Modules
