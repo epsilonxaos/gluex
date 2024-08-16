@@ -101,40 +101,40 @@ const Menu = ({ className = "" }) => {
 	return (
 		<motion.ul initial="hidden" animate="visible" exit="hidden" variants={containerVariants} className={className}>
 			<motion.li className="mb-4 max-w-max md:mb-0 relative" variants={variantEscritorio} transition={{ duration: 0.3 }} ref={ref}>
-				<button onClick={() => setOpen(!open)} className={`text-white md:flex md:items-center md:gap-1  ${open ? "hover:text-verde !text-verde" : ""}`} type="button">
+				<button onClick={() => setOpen(!open)} className={`text-white text-base md:text-xs md:flex md:items-center md:gap-1  ${open ? "hover:text-verde !text-verde" : ""}`} type="button">
 					Product <FaAngleDown className="inline-block ml-1" />
 				</button>
 
 				{open && (
 					<motion.div className="md:absolute w-[330px] md:top-full pt-[28px]" initial="hidden" animate="visible" exit="hidden" variants={containerVariants}>
 						<div className="md:bg-neutral-900 md:bg-opacity-95 md:backdrop-blur-sm md:rounded-[30px] md:rounded-tl-none md:p-8">
-							<motion.h4 className="text-xs mb-3" variants={variantsubMenu}>
+							<motion.h4 className="text-base md:text-xs mb-3" variants={variantsubMenu}>
 								For Liquidity Providers
 							</motion.h4>
 							<motion.ul className="text-[10px] mb-6 pl-4 md:pl-0" variants={variantsubMenu}>
 								<li className="mb-3">
-									<Links className={"flex items-center justify-start"} url={""}>
+									<Links className={"flex text-base md:text-xs items-center justify-start"} url={""}>
 										<img className="size-[16px] mr-2" src={iconLiquid2} alt="" /> GlueX Limit Order Book
 									</Links>
 								</li>
 								<li>
-									<Links className={"flex items-center justify-start"} url={""}>
+									<Links className={"flex text-base md:text-xs items-center justify-start"} url={""}>
 										<img className="size-[16px] mr-2" src={iconLiquid1} alt="" />
 										GlueX Liquidity Pools
 									</Links>
 								</li>
 							</motion.ul>
-							<motion.h4 className="text-xs mb-3" variants={variantsubMenu}>
+							<motion.h4 className="text-base md:text-xs mb-3" variants={variantsubMenu}>
 								For Protocols and dApps
 							</motion.h4>
 							<motion.ul className="text-[10px] pl-4 md:pl-0" variants={variantsubMenu}>
 								<li className="mb-3">
-									<Links className={"flex items-center justify-start"} url={""}>
+									<Links className={"flex text-base md:text-xs items-center justify-start"} url={""}>
 										<img className="size-[16px] mr-2" src={iconProtocol1} alt="" /> GlueX SDK
 									</Links>
 								</li>
 								<li>
-									<Links className={"flex items-center justify-start"} url={""}>
+									<Links className={"flex text-base md:text-xs items-center justify-start"} url={""}>
 										<img className="size-[16px] mr-2" src={iconProtocol2} alt="" /> GlueX Hooks
 									</Links>
 								</li>
@@ -144,21 +144,21 @@ const Menu = ({ className = "" }) => {
 				)}
 			</motion.li>
 			<motion.li className={`mb-4 max-w-max md:mb-0 transition-opacity ${open ? "max-md:!opacity-40 pointer-events-none cursor-auto" : ""}`} variants={variantEscritorio} transition={{ duration: 0.3 }}>
-				<Links className={"flex items-center gap-2"} url={"https://mirror.xyz/gluex.eth"}>
+				<Links className={"flex text-base md:text-xs items-center gap-2"} url={"https://mirror.xyz/gluex.eth"}>
 					Whitepaper <HiOutlineExternalLink size={16} />
 				</Links>
 			</motion.li>
 			<motion.li className={`mb-4 max-w-max md:mb-0 transition-opacity ${open ? "max-md:!opacity-40 pointer-events-none cursor-auto" : ""}`} variants={variantEscritorio} transition={{ duration: 0.3 }}>
-				<Links className={"flex items-center gap-2"} url={"https://mirror.xyz/gluex.eth"}>
+				<Links className={"flex text-base md:text-xs items-center gap-2"} url={"https://mirror.xyz/gluex.eth"}>
 					Jobs <HiOutlineExternalLink size={16} />
 				</Links>
 			</motion.li>
 			<motion.li className={`mb-4 max-w-max md:mb-0 transition-opacity ${open ? "max-md:!opacity-40 pointer-events-none cursor-auto" : ""}`} variants={variantEscritorio} transition={{ duration: 0.3 }}>
-				<Links className={"flex items-center gap-2"} url={"https://mirror.xyz/gluex.eth"}>
+				<Links className={"flex text-base md:text-xs items-center gap-2"} url={"https://mirror.xyz/gluex.eth"}>
 					Blog <HiOutlineExternalLink size={16} />
 				</Links>
 			</motion.li>
-			<motion.li className={`max-w-max transition-opacity ${open ? "max-md:!opacity-40 pointer-events-none cursor-auto" : ""}`} variants={variantEscritorio} transition={{ duration: 0.3 }}>
+			<motion.li className={`max-w-max text-base md:text-xs transition-opacity ${open ? "max-md:!opacity-40 pointer-events-none cursor-auto" : ""}`} variants={variantEscritorio} transition={{ duration: 0.3 }}>
 				<button className="text-white hover:text-verde" type="button" onClick={() => dispatch({ openModalContact: true })}>
 					Integrate
 				</button>
