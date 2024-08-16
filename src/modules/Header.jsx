@@ -52,7 +52,7 @@ export const Header = () => {
 			<header ref={ref} className="fixed px-10 w-full z-50">
 				<div className="absolute bg-black bg-opacity-95 backdrop-blur-sm top-0 left-0 w-full h-full"></div>
 				<div className="max-w-app mx-auto relative z-10">
-					<nav className="grid grid-cols-2 py-7 items-center">
+					<nav className="grid grid-cols-2 py-4 md:py-7 items-center">
 						<div className="col-span-1">
 							<img src={logo} className="w-[95px]" alt="Glue X" />
 						</div>

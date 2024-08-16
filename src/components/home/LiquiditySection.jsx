@@ -31,7 +31,7 @@ const LiquiditySection = () => {
 					</motion.ul>
 
 					<div className="md:flex items-center justify-center gap-4">
-						<a href="http://" target="_blank" rel="noopener noreferrer" className="btn verde mx-auto md:m-0 mb-4">
+						<a href="http://" target="_blank" rel="noopener noreferrer" className="btn verde mx-auto md:m-0 mb-8">
 							Start integrating
 						</a>
 						<a href="http://" target="_blank" rel="noopener noreferrer" className="btn2 verde mx-auto md:m-0">

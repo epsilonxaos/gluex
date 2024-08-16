@@ -156,14 +156,14 @@ const SolutionCard = ({ mainColor = "text-verde", btnColor = "", icon, title, de
 						))}
 					</ul>
 
-					<a href={link} target="_blank" rel="noopener noreferrer" className={`btn2 ${btnColor} w-[130px] mx-auto md:ml-0`}>
+					<a href={link} target="_blank" rel="noopener noreferrer" className={`btn2 ${btnColor} w-[130px] mx-auto my-4 md:m-0 md:ml-0`}>
 						Learn more
 					</a>
 				</div>
 			</div>
 			<div className="col-span-1 relative order-1 md:order-2">
-				<img src={iconEarn} className="w-full lg:w-[70%] mx-auto md:max-h-[550px] max-h-[400px] opacity-0 pointer-events-none select-none" alt={"Icon demo"} />
-				<img src={icon} className="w-full lg:w-[70%] mx-auto md:max-h-[550px] max-h-[400px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt={"Icon " + title} />
+				<img src={iconEarn} className="w-full lg:w-[70%] max-w-[180px] mx-auto md:max-h-[550px] max-h-[400px] opacity-0 pointer-events-none select-none" alt={"Icon demo"} />
+				<img src={icon} className="w-full lg:w-[70%] max-w-[180px] mx-auto md:max-h-[550px] max-h-[400px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt={"Icon " + title} />
 			</div>
 		</div>
 	);

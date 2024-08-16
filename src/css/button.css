@@ -6,12 +6,19 @@
 	font-size: 13px;
 	text-transform: uppercase;
 	text-decoration: none;
-	padding: 10px 15px;
+	padding: 12px 15px;
 	display: block;
 	transition: all 0.2s;
 	font-family: "Aux Mono";
 	font-weight: 400;
 	text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+	.btn,
+	.btn2 {
+		padding: 10px 15px;
+	}
 }
 
 .btn {

@@ -22,7 +22,7 @@ const MainSection = () => {
 							<Text className="mb-8">Via revenue-share among users, liquidity providers, solvers and contributors</Text>
 
 							<div className="md:flex items-center justify-center lg:justify-start gap-4">
-								<a href="http://" target="_blank" rel="noopener noreferrer" className="btn verde mx-auto md:m-0 mb-4">
+								<a href="http://" target="_blank" rel="noopener noreferrer" className="btn verde mx-auto md:m-0 mb-8">
 									Start integrating
 								</a>
 								<a href="http://" target="_blank" rel="noopener noreferrer" className="btn2 verde mx-auto md:m-0">
