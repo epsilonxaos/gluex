@@ -21,6 +21,9 @@ import iconBuildList2 from "../../assets/img/icon/build/2.svg";
 import iconBuildList3 from "../../assets/img/icon/build/3.svg";
 import { V_FADE_IN_FROM_BOTTOM_TO_ORIGIN } from "../../constant/animationVariants";
 import CustomAnimation from "../animation/animation";
+import { WordTransition } from "../animation/WordTransition";
+
+const words = ["flexible", "powerful", "all-round"];
 
 const SolutionsSection = () => {
 	const ref = useRef(null);
@@ -29,6 +32,19 @@ const SolutionsSection = () => {
 	return (
 		<div className="md:px-10">
 			<section className="w-full md:py-[60px] lg:py-[90px] relative max-w-app mx-auto max-md:overflow-hidden">
+				<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN}>
+					<p className="text-[20px] leading-[30px] md:text-[32px] w-full text-center px-4 mb-[50px]">
+						<span className="inline-flex">
+							The most{" "}
+							<span className="overflow-hidden">
+								<WordTransition words={words} based="&nbsp;all-round&nbsp;" />
+							</span>{" "}
+							solve
+						</span>{" "}
+						<br className="lg:hidden" />
+						computing protocol for DeFi.
+					</p>
+				</CustomAnimation>
 				<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN}>
 					<Swiper
 						loop={true}
