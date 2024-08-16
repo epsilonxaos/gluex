@@ -41,10 +41,10 @@ export const Header = () => {
 		setOpen(false);
 	});
 
-	// useEffect(() => {
-	// 	if (open) document.querySelector("body").classList.add("overflow-hidden");
-	// 	else document.querySelector("body").classList.remove("overflow-hidden");
-	// }, [open]);
+	useEffect(() => {
+		if (open) document.querySelector("body").classList.add("overflow-hidden");
+		else document.querySelector("body").classList.remove("overflow-hidden");
+	}, [open]);
 
 	return (
 		<>
