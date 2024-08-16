@@ -7,7 +7,7 @@ import Text from "../Text";
 
 const MainSection = () => {
 	return (
-		<section className="w-full relative z-10">
+		<section className="w-full relative z-10 overflow-hidden">
 			<div className="max-w-app mx-auto px-10 min-h-svh flex flex-col items-center justify-center md:min-h-svh">
 				<div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-start   md:w-[90%] mx-auto md:pb-[60px] pt-[120px]">
 					<CustomAnimation className="col-span-1 mb-[40px] lg:mb-0" variant={V_FROM_LEFT_TO_ORIGIN}>

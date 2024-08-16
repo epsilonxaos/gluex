@@ -11,6 +11,7 @@ import iconProtocol1 from "../assets/img/menu/protocol1.svg";
 import iconProtocol2 from "../assets/img/menu/protocol2.svg";
 import { useClickAway, useHover } from "@uidotdev/usehooks";
 import { FaAngleDown } from "react-icons/fa6";
+import { HiOutlineExternalLink } from "react-icons/hi";
 
 const containerVariants = {
 	hidden: { opacity: 0 },
@@ -100,7 +101,7 @@ const Menu = ({ className = "" }) => {
 	return (
 		<motion.ul initial="hidden" animate="visible" exit="hidden" variants={containerVariants} className={className}>
 			<motion.li className="mb-4 max-w-max md:mb-0 relative" variants={variantEscritorio} transition={{ duration: 0.3 }} ref={ref}>
-				<button className={`text-white md:flex md:items-center md:gap-1  ${open ? "hover:text-verde !text-verde" : ""}`} type="button">
+				<button onClick={() => setOpen(!open)} className={`text-white md:flex md:items-center md:gap-1  ${open ? "hover:text-verde !text-verde" : ""}`} type="button">
 					Product <FaAngleDown className="inline-block ml-1" />
 				</button>
 
@@ -143,13 +144,19 @@ const Menu = ({ className = "" }) => {
 				)}
 			</motion.li>
 			<motion.li className={`mb-4 max-w-max md:mb-0 transition-opacity ${open ? "max-md:!opacity-40 pointer-events-none cursor-auto" : ""}`} variants={variantEscritorio} transition={{ duration: 0.3 }}>
-				<Links url={"https://mirror.xyz/gluex.eth"}>Whitepaper</Links>
+				<Links className={"flex items-center gap-2"} url={"https://mirror.xyz/gluex.eth"}>
+					Whitepaper <HiOutlineExternalLink size={16} />
+				</Links>
 			</motion.li>
 			<motion.li className={`mb-4 max-w-max md:mb-0 transition-opacity ${open ? "max-md:!opacity-40 pointer-events-none cursor-auto" : ""}`} variants={variantEscritorio} transition={{ duration: 0.3 }}>
-				<Links url={"https://mirror.xyz/gluex.eth"}>Jobs</Links>
+				<Links className={"flex items-center gap-2"} url={"https://mirror.xyz/gluex.eth"}>
+					Jobs <HiOutlineExternalLink size={16} />
+				</Links>
 			</motion.li>
 			<motion.li className={`mb-4 max-w-max md:mb-0 transition-opacity ${open ? "max-md:!opacity-40 pointer-events-none cursor-auto" : ""}`} variants={variantEscritorio} transition={{ duration: 0.3 }}>
-				<Links url={"https://mirror.xyz/gluex.eth"}>Blog</Links>
+				<Links className={"flex items-center gap-2"} url={"https://mirror.xyz/gluex.eth"}>
+					Blog <HiOutlineExternalLink size={16} />
+				</Links>
 			</motion.li>
 			<motion.li className={`max-w-max transition-opacity ${open ? "max-md:!opacity-40 pointer-events-none cursor-auto" : ""}`} variants={variantEscritorio} transition={{ duration: 0.3 }}>
 				<button className="text-white hover:text-verde" type="button" onClick={() => dispatch({ openModalContact: true })}>
