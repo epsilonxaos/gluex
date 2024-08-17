@@ -19,7 +19,6 @@ import iconSolveList3 from "../../assets/img/icon/solve/3.svg";
 import iconBuildList1 from "../../assets/img/icon/build/1.svg";
 import iconBuildList2 from "../../assets/img/icon/build/2.svg";
 import iconBuildList3 from "../../assets/img/icon/build/3.svg";
-import { V_FADE_IN_FROM_BOTTOM_TO_ORIGIN } from "../../constant/animationVariants";
 import CustomAnimation from "../animation/animation";
 import { WordTransition } from "../animation/WordTransition";
 
@@ -32,7 +31,7 @@ const SolutionsSection = () => {
 	return (
 		<div className="md:px-10">
 			<section className="w-full md:py-[60px] lg:py-[90px] relative max-w-app mx-auto max-md:overflow-hidden">
-				<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN}>
+				<CustomAnimation animation="fade-up">
 					<p className="text-[20px] leading-[30px] md:text-[32px] w-full text-center px-4 mb-[50px]">
 						<span className="inline-flex">
 							The most{" "}
@@ -45,7 +44,7 @@ const SolutionsSection = () => {
 						computing protocol for DeFi.
 					</p>
 				</CustomAnimation>
-				<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN}>
+				<CustomAnimation animation="fade-up">
 					<Swiper
 						loop={true}
 						speed={1500}
@@ -162,8 +161,8 @@ const SolutionCard = ({ mainColor = "text-verde", btnColor = "", icon, title, de
 				</div>
 			</div>
 			<div className="col-span-1 relative order-1 md:order-2">
-				<img src={iconEarn} className="w-full lg:w-[70%] max-w-[180px] mx-auto md:max-h-[550px] max-h-[400px] opacity-0 pointer-events-none select-none" alt={"Icon demo"} />
-				<img src={icon} className="w-full lg:w-[70%] max-w-[180px] mx-auto md:max-h-[550px] max-h-[400px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt={"Icon " + title} />
+				<img src={iconEarn} className="w-full lg:w-[70%] maxm-md:max-w-[180px] mx-auto md:max-h-[550px] max-h-[400px] opacity-0 pointer-events-none select-none" alt={"Icon demo"} />
+				<img src={icon} className="w-full lg:w-[70%] maxm-md:max-w-[180px] mx-auto md:max-h-[550px] max-h-[400px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt={"Icon " + title} />
 			</div>
 		</div>
 	);

@@ -1,16 +1,20 @@
+import { useMediaQuery } from "react-responsive";
 import animateDesk from "../../assets/img/animate-desk.gif";
-import { V_FADE_IN_FROM_BOTTOM_TO_ORIGIN, V_FROM_LEFT_TO_ORIGIN, V_FROM_RIGHT_TO_ORIGIN } from "../../constant/animationVariants";
+import animateMovil from "../../assets/img/animate-movil.gif";
+import { V_FADE_IN_FROM_BOTTOM_TO_ORIGIN } from "../../constant/animationVariants";
 import CustomAnimation from "../animation/animation";
 import { InfiniteMovingCards } from "../animation/infinite-moving-cards";
 import { XIcon } from "../icons";
 import Text from "../Text";
 
 const MainSection = () => {
+	const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
 	return (
 		<section className="w-full relative z-10 overflow-hidden">
 			<div className="max-w-app mx-auto px-10 min-h-svh flex flex-col items-center justify-center md:min-h-svh">
 				<div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-start   md:w-[90%] mx-auto md:pb-[60px] pt-[120px]">
-					<CustomAnimation className="col-span-1 mb-[40px] lg:mb-0" variant={V_FROM_LEFT_TO_ORIGIN}>
+					<CustomAnimation className="col-span-1 mb-[40px] lg:mb-0" animation="fade-right">
 						<div className="max-w-[265px] md:max-w-[430px] mx-auto">
 							<h1 className="text-[40px] text-left mb-4 md:text-[60px] lg:text-[96px] leading-none">
 								Earn, Solve <br className="md:hidden" /> and Build with <br className="md:hidden" />
@@ -31,16 +35,19 @@ const MainSection = () => {
 							</div>
 						</div>
 					</CustomAnimation>
-					<CustomAnimation className="col-span-1" variant={V_FROM_RIGHT_TO_ORIGIN}>
-						<img src={animateDesk} alt="Animacion de caja" className="max-w-[350px] lg:w-[70%] 2xl:w-[90%] lg:max-w-[590px] mx-auto w-full" />
+					<CustomAnimation className="col-span-1" animation="fade-left">
+						{/* <img src={animateDesk} alt="Animacion de caja" className="max-w-[350px] lg:w-[70%] 2xl:w-[90%] lg:max-w-[590px] mx-auto w-full" /> */}
+						{isMobile ? <img src={animateMovil} className="max-w-[350px] mx-auto w-full" alt="" /> : <img src={animateDesk} alt="Animacion de caja" className="max-w-[350px] lg:w-[70%] 2xl:w-[90%] lg:max-w-[590px] mx-auto w-full" />}
 					</CustomAnimation>
 				</div>
 
-				<div className="w-full overflow-hidden">
-					<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN} className="pb-[60px] hidden md:block">
-						<InfiniteMovingCards className="mx-auto w-[100%]" items={[...brands1, ...brands2]} pauseOnHover={false} direction="right" speed="slow" />
-					</CustomAnimation>
-				</div>
+				{!isMobile && (
+					<div className="w-full overflow-hidden">
+						<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN} className="pb-[60px] hidden md:block">
+							<InfiniteMovingCards className="mx-auto w-[100%]" items={[...brands1, ...brands2]} pauseOnHover={false} direction="right" speed="slow" />
+						</CustomAnimation>
+					</div>
+				)}
 			</div>
 		</section>
 	);

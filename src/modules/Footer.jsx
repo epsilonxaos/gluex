@@ -1,7 +1,7 @@
-import { FaLinkedin, FaTelegram } from "react-icons/fa";
-import { FaXTwitter, FaDiscord } from "react-icons/fa6";
-import Links from "../components/Links";
 import { useContext } from "react";
+import { FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import Links from "../components/Links";
 import AppContext from "../context/AppContext";
 
 const iconSize = 14;
@@ -51,16 +51,6 @@ const SocialMedia = () => {
 					<FaXTwitter size={iconSize} />
 				</Links>
 			</li>
-			{/* <li className="col-span-1">
-				<Links className={"flex items-center"} url={"https://t.me/+yf_US2ACNrgyNzY0"}>
-					<FaTelegram size={iconSize} />
-				</Links>
-			</li> */}
-			{/* <li className="col-span-1">
-				<Links>
-					<FaDiscord size={iconSize} />
-				</Links>
-			</li> */}
 		</ul>
 	);
 };
@@ -70,11 +60,6 @@ const NavFooter = () => {
 
 	return (
 		<ul className="flex items-center gap-8 md:gap-5 lg:gap-8 max-w-max">
-			{/* <li className="hidden md:block">
-				<Links className={"flex items-center"} url={"https://t.me/+yf_US2ACNrgyNzY0"}>
-					<FaTelegram size={iconSize} className="inline-block mr-2" /> 000 000 0000
-				</Links>
-			</li> */}
 			<li className="">
 				<Links.Mail mail={"contact@gluex.xyz"}>Mail</Links.Mail>
 			</li>

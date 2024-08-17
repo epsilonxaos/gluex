@@ -4,7 +4,10 @@ import { Footer } from "./modules/Footer";
 import { Header } from "./modules/Header";
 import { Home } from "./pages/Home";
 import AppContext from "./context/AppContext";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
+
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import "./css/button.css";
 
@@ -15,6 +18,13 @@ const reducer = (prev, next) => ({ ...prev, ...next });
 
 function App() {
 	const [state, dispatch] = useReducer(reducer, initialArgs);
+
+	useEffect(() => {
+		Aos.init({
+			duration: 600,
+			offset: 80,
+		});
+	}, []);
 
 	return (
 		<AppContext.Provider value={{ state, dispatch }}>

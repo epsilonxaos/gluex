@@ -2,12 +2,11 @@ import AnimatedNumber from "../animation/AnimatedNumber";
 
 import "swiper/css/bundle";
 import CustomAnimation from "../animation/animation";
-import { V_FADE_IN_FROM_BOTTOM_TO_ORIGIN } from "../../constant/animationVariants";
 
 const CountSection = () => {
 	return (
 		<section className="w-full  mx-auto md:py-[60px] lg:py-[90px]">
-			<CustomAnimation variant={V_FADE_IN_FROM_BOTTOM_TO_ORIGIN}>
+			<CustomAnimation animation="fade-up">
 				<ul className=" py-14 md:py-0 rounded-2xl max-w-max text-center md:text-left md:flex md:items-start md:justify-between md:max-w-[960px] w-[95%] mx-auto font-auxMono">
 					<li className="mb-[0px] md:mb-0">
 						<FlowValue />
