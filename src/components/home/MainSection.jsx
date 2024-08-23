@@ -1,6 +1,5 @@
 import { useMediaQuery } from "react-responsive";
 import animateDesk from "../../assets/img/animate-desk.svg";
-// import animateMovil from "../../assets/img/animate-movil.gif";
 import { V_FADE_IN_FROM_BOTTOM_TO_ORIGIN } from "../../constant/animationVariants";
 import CustomAnimation from "../animation/animation";
 import { InfiniteMovingCards } from "../animation/infinite-moving-cards";
@@ -37,7 +36,6 @@ const MainSection = () => {
 					</CustomAnimation>
 					<CustomAnimation className="col-span-1" animation="fade-left">
 						<img src={animateDesk} alt="Animacion de caja" className="max-w-[350px] lg:w-[70%] 2xl:w-[90%] lg:max-w-[590px] mx-auto w-full" />
-						{/* {isMobile ? <img src={animateMovil} className="max-w-[350px] mx-auto w-full" alt="" /> : <img src={animateDesk} alt="Animacion de caja" className="max-w-[350px] lg:w-[70%] 2xl:w-[90%] lg:max-w-[590px] mx-auto w-full" />} */}
 					</CustomAnimation>
 				</div>
 
