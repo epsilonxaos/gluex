@@ -161,8 +161,8 @@ const SolutionCard = ({ mainColor = "text-verde", btnColor = "", icon, title, de
 				</div>
 			</div>
 			<div className="col-span-1 relative order-1 md:order-2">
-				<img src={iconEarn} className="w-full lg:w-[70%] maxm-md:max-w-[180px] mx-auto md:max-h-[550px] max-h-[400px] opacity-0 pointer-events-none select-none" alt={"Icon demo"} />
-				<img src={icon} className="w-full lg:w-[70%] maxm-md:max-w-[180px] mx-auto md:max-h-[550px] max-h-[400px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt={"Icon " + title} />
+				<img src={iconEarn} className="w-full lg:w-[70%] max-md:max-w-[150px] mx-auto md:max-h-[550px] max-h-[400px] opacity-0 pointer-events-none select-none" alt={"Icon demo"} />
+				<img src={icon} className="w-full lg:w-[70%] max-md:max-w-[150px] mx-auto md:max-h-[550px] max-h-[400px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt={"Icon " + title} />
 			</div>
 		</div>
 	);
