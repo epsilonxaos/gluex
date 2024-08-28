@@ -1,12 +1,17 @@
 # GlueX
 
-### Requerimientos
+[![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![image](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![image](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/en)
+![image](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+
+### 📝 Requerimientos
 
 1. PHP >= 8.1.x
 2. Node >= 18.x
 3. NPM >= 9.8.x
 
-### Instalación, configuración y compilado
+### 💻 Instalación, configuración y compilado
 
 Ejecutar los siguientes comandos:
 
@@ -18,7 +23,7 @@ npm install
 npm run build
 ```
 
-### Configuración del envío de correo
+### ✉️ Configuración del envío de correo
 
 Crear el archivo `.env`
 
@@ -44,7 +49,7 @@ Instalar vendors
 composer install
 ```
 
-### Despliegue
+### 🚀 Despliegue a producción
 
 1. Subir el contenido de la carpeta `dist` a `public_html`.
 2. Subir el archivo `enviar_correo.php` a `public_html`.
