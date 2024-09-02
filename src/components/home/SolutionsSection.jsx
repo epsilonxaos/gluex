@@ -21,6 +21,9 @@ import iconBuildList2 from "../../assets/img/icon/build/2.svg";
 import iconBuildList3 from "../../assets/img/icon/build/3.svg";
 import CustomAnimation from "../animation/animation";
 import { WordTransition } from "../animation/WordTransition";
+import { Autoplay } from "swiper/modules";
+
+import "swiper/css/autoplay";
 
 const words = ["flexible", "powerful", "all-round"];
 
@@ -47,10 +50,14 @@ const SolutionsSection = () => {
 				<CustomAnimation animation="fade-up">
 					<Swiper
 						loop={true}
+						autoplay={{
+							disableOnInteraction: false,
+						}}
 						speed={1500}
 						onSwiper={(swiper) => {
 							ref.current = swiper;
 						}}
+						modules={[Autoplay]}
 						onSlideChange={(s) => setIndex(s.activeIndex)}
 						spaceBetween={50}
 					>
